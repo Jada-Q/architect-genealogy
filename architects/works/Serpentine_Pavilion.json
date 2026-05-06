@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Serpentine Galleries",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Serpentine Galleries</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q591086",
+  "titles": {
+    "canonical": "Serpentine_Galleries",
+    "normalized": "Serpentine Galleries",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Serpentine Galleries</span></span>"
+  },
+  "pageid": 1073721,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/20110606_London_96.JPG/330px-20110606_London_96.JPG",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5e/20110606_London_96.JPG",
+    "width": 3264,
+    "height": 2448
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1349674444",
+  "tid": "8152b696-3b1c-11f1-ba95-43f00f0d818f",
+  "timestamp": "2026-04-18T11:48:24Z",
+  "description": "Art gallery in Hyde Park, London",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 51.5047,
+    "lon": -0.1751
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Serpentine_Galleries",
+      "revisions": "https://en.wikipedia.org/wiki/Serpentine_Galleries?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Serpentine_Galleries?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Serpentine_Galleries"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Serpentine_Galleries",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Serpentine_Galleries",
+      "edit": "https://en.wikipedia.org/wiki/Serpentine_Galleries?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Serpentine_Galleries"
+    }
+  },
+  "extract": "The Serpentine Galleries are two contemporary art galleries in Kensington Gardens, Westminster, Greater London. Recently rebranded to just Serpentine, the organisation is split across Serpentine South and Serpentine North.",
+  "extract_html": "<p>The <b>Serpentine Galleries</b> are two contemporary art galleries in Kensington Gardens, Westminster, Greater London. Recently rebranded to just Serpentine, the organisation is split across Serpentine South and Serpentine North.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Asahikawa Station",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Asahikawa Station</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1073617",
+  "titles": {
+    "canonical": "Asahikawa_Station",
+    "normalized": "Asahikawa Station",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Asahikawa Station</span></span>"
+  },
+  "pageid": 12412763,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/JR_Asahikwa_Station_building_%28North_Exit%29.jpg/330px-JR_Asahikwa_Station_building_%28North_Exit%29.jpg",
+    "width": 330,
+    "height": 172
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/JR_Asahikwa_Station_building_%28North_Exit%29.jpg/3840px-JR_Asahikwa_Station_building_%28North_Exit%29.jpg",
+    "width": 4434,
+    "height": 2316
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1309787487",
+  "tid": "851956a0-8abc-11f0-b1db-1b0a26273160",
+  "timestamp": "2025-09-06T00:57:54Z",
+  "description": "Railway station in Asahikawa, Hokkaido, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 43.763005,
+    "lon": 142.358995
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Asahikawa_Station",
+      "revisions": "https://en.wikipedia.org/wiki/Asahikawa_Station?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Asahikawa_Station?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Asahikawa_Station"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Asahikawa_Station",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Asahikawa_Station",
+      "edit": "https://en.wikipedia.org/wiki/Asahikawa_Station?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Asahikawa_Station"
+    }
+  },
+  "extract": "Asahikawa Station  is a railway station in Asahikawa, Hokkaido, Japan, operated by the Hokkaido Railway Company.",
+  "extract_html": "<p><b>Asahikawa Station</b><span style=\"font-weight:normal\"> </span> is a railway station in Asahikawa, Hokkaido, Japan, operated by the Hokkaido Railway Company.</p>"
+}

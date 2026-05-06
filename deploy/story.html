@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Architects of Japan — A 110-year family tree</title>
+<meta name="description" content="From Le Corbusier to 田根剛: 110 years, 38 architects, 25 master-disciple links — visualized.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root {
+  --bg: #fdfcf8;
+  --ink: #1a1a1a;
+  --muted: #777;
+  --rule: #d8d4c5;
+  --gold: #b8893d;
+  --gold-deep: #8a6520;
+  --slate: #2c3e50;
+  --serif: 'Cormorant Garamond', 'Noto Serif SC', 'Hiragino Mincho ProN', 'Songti SC', serif;
+  --sans: 'Inter', 'Noto Sans SC', -apple-system, 'Hiragino Sans', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+article { max-width: 100%; }
+
+.scene {
+  min-height: 100vh; padding: 80px 24px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  position: relative;
+}
+.scene-content { max-width: 640px; width: 100%; }
+.scene-label {
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 18px;
+}
+h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 7vw, 76px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 28px; }
+h1 em { font-style: italic; color: var(--gold); }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 24px; }
+.lede { font-size: clamp(18px, 2.2vw, 22px); font-weight: 300; color: var(--ink); margin-bottom: 28px; line-height: 1.55; }
+p { font-size: clamp(16px, 1.8vw, 19px); line-height: 1.7; margin-bottom: 16px; color: #2a2a2a; }
+p.tight { margin-bottom: 8px; }
+p em { font-style: italic; }
+.names { font-family: var(--serif); font-size: clamp(20px, 2.4vw, 24px); margin: 24px 0; color: var(--gold-deep); letter-spacing: 0.01em; }
+.names span { display: inline-block; margin-right: 14px; }
+.aside { font-size: 13px; color: var(--muted); border-left: 2px solid var(--rule); padding-left: 14px; margin: 24px 0; line-height: 1.55; font-style: italic; }
+.rule { width: 60px; height: 1px; background: var(--rule); margin: 32px auto; }
+
+.scroll-cue {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  font-size: 11px; color: var(--muted); letter-spacing: 0.2em;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.6; } 50% { transform: translateX(-50%) translateY(6px); opacity: 1; } }
+
+/* Hero */
+.hero { background: var(--bg); }
+.hero h1 { text-align: center; }
+.hero .lede { text-align: center; color: var(--muted); font-size: 16px; letter-spacing: 0.02em; }
+.hero .meta { font-family: var(--sans); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 60px; text-align: center; }
+.hero-stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 60px; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-family: var(--serif); font-size: 48px; font-weight: 400; color: var(--gold); line-height: 1; }
+.hero-stat .label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+/* Visualizations */
+.viz { width: 100%; margin: 32px 0 16px; }
+svg.viz-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.viz-caption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; letter-spacing: 0.04em; }
+
+/* Animation classes */
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease, transform 1.2s ease; }
+.in-view .fade-in { opacity: 1; transform: translateY(0); }
+.fade-in.d1 { transition-delay: 0.15s; }
+.fade-in.d2 { transition-delay: 0.30s; }
+.fade-in.d3 { transition-delay: 0.45s; }
+.fade-in.d4 { transition-delay: 0.60s; }
+
+/* Map scene */
+.map-container { width: 100%; height: 60vh; min-height: 420px; margin: 24px 0; border: 1px solid var(--rule); }
+
+/* Pritzker scene */
+.pritzker-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 32px; margin: 32px 0; }
+.pritzker-row { display: flex; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+.pritzker-year { font-family: var(--serif); font-size: 22px; color: var(--gold); width: 50px; }
+.pritzker-name { font-size: 15px; flex: 1; }
+.pritzker-age { font-size: 12px; color: var(--muted); }
+
+/* CTA */
+.cta { background: var(--ink); color: var(--bg); padding: 120px 24px; }
+.cta h2 { color: var(--bg); text-align: center; margin-bottom: 32px; }
+.cta p { color: rgba(253, 252, 248, 0.7); text-align: center; max-width: 480px; margin: 0 auto 40px; }
+.cta-btn {
+  display: inline-block; padding: 16px 40px;
+  border: 1px solid var(--gold); color: var(--gold);
+  text-decoration: none; font-family: var(--sans); font-size: 13px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover { background: var(--gold); color: var(--ink); }
+.cta-wrap { text-align: center; }
+.footer-meta { text-align: center; color: rgba(253,252,248,0.4); font-size: 11px; letter-spacing: 0.15em; margin-top: 80px; text-transform: uppercase; }
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .scene { padding: 60px 20px; }
+  .hero-stats { gap: 28px; }
+  .hero-stat .num { font-size: 36px; }
+  .pritzker-grid { grid-template-columns: 1fr; gap: 0; }
+  .map-container { height: 50vh; min-height: 320px; }
+  .cta { padding: 80px 20px; }
+}
+
+/* SVG node styles */
+.story-node circle { stroke: var(--bg); stroke-width: 1.5; transition: r 0.6s ease; }
+.story-node.dim circle { fill: var(--rule); }
+.story-node.gold circle { fill: var(--gold); }
+.story-node.slate circle { fill: var(--slate); }
+.story-node.muted circle { fill: var(--muted); }
+.story-node text { font-family: var(--sans); font-size: 11px; fill: var(--ink); pointer-events: none; }
+.story-node.muted text { fill: var(--muted); }
+.story-edge { stroke: var(--ink); stroke-width: 1; fill: none; opacity: 0.5; }
+.story-edge.gold { stroke: var(--gold); }
+
+/* Animated edge draw */
+.draw-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 1.6s ease 0.3s; }
+.in-view .draw-line { stroke-dashoffset: 0; }
+
+/* Language switcher */
+#lang-switch {
+  position: fixed; top: 20px; right: 20px; z-index: 1000;
+  display: flex; gap: 1px; background: rgba(253,252,248,0.85);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--rule); padding: 2px;
+}
+#lang-switch button {
+  background: transparent; border: none; padding: 4px 10px;
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em;
+  color: var(--muted); cursor: pointer; transition: all 0.2s;
+}
+#lang-switch button:hover { color: var(--ink); }
+#lang-switch button.active { background: var(--ink); color: var(--bg); }
+@media (max-width: 640px) {
+  #lang-switch { top: 12px; right: 12px; }
+  #lang-switch button { padding: 3px 8px; font-size: 9.5px; }
+}
+</style>
+</head>
+<body>
+
+<div id="lang-switch">
+  <button data-lang="en" class="active">EN</button>
+  <button data-lang="zh">中文</button>
+  <button data-lang="ja">日本語</button>
+</div>
+
+<article>
+
+<!-- ── Scene 1: HERO ── -->
+<section class="scene hero" data-scene="hero">
+  <div class="scene-content" style="text-align:center;">
+    <div class="meta fade-in" data-i18n="meta">A scrolling essay · ~3 min read</div>
+    <h1 class="fade-in d1" data-i18n="heroH1">Architects of <em>Japan</em></h1>
+    <p class="lede fade-in d2" data-i18n="heroLede">From Le Corbusier to 田根剛 — a 110-year family tree of 38 lives and the masters who shaped them.</p>
+    <div class="hero-stats fade-in d3">
+      <div class="hero-stat"><div class="num">38</div><div class="label" data-i18n="statArchitects">Architects</div></div>
+      <div class="hero-stat"><div class="num">25</div><div class="label" data-i18n="statEdges">Lineage edges</div></div>
+      <div class="hero-stat"><div class="num">8</div><div class="label" data-i18n="statPritzker">Pritzker laureates</div></div>
+      <div class="hero-stat"><div class="num">14</div><div class="label" data-i18n="statAbroad">Works abroad</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue" data-i18n="scrollCue">SCROLL ↓</div>
+</section>
+
+<!-- ── Scene 2: ORIGIN ── -->
+<section class="scene" data-scene="origin">
+  <div class="scene-content">
+    <span class="scene-label fade-in" data-i18n="ch1Label">1900 — 1945 · Chapter 1</span>
+    <h2 class="fade-in d1" data-i18n="ch1Title">Imported Modernism</h2>
+    <p class="fade-in d2" data-i18n="ch1P1">In 1928, a 23-year-old graduate of Tokyo Imperial University boarded a ship for Marseille. His name was <em>Kunio Maekawa</em>.</p>
+    <p class="fade-in d2" data-i18n="ch1P2">For two years he worked in Le Corbusier's atelier on Rue de Sèvres. Two years later, <em>Junzo Sakakura</em> arrived in the same studio.</p>
+    <p class="fade-in d3" data-i18n="ch1P3">They returned to Japan with concrete, glass, and right angles. Modernism had crossed the Pacific — in Japanese hands.</p>
+    <div class="viz fade-in d4" id="viz-origin"></div>
+    <div class="viz-caption fade-in d4" data-i18n="ch1Caption">Two students. One master. The bridge from Paris to Tokyo.</div>
+  </div>
+</section>
+
+<!-- ── Scene 3: TANGE'S EMPIRE ── -->
+<section class="scene" data-scene="tange">
+  <div class="scene-content">
+    <span class="scene-label fade-in" data-i18n="ch2Label">1946 — 1980 · Chapter 2</span>
+    <h2 class="fade-in d1" data-i18n="ch2Title">Tange's Empire</h2>
+    <p class="fade-in d2" data-i18n="ch2P1">In 1946, Maekawa hired a 33-year-old graduate named <em>Kenzo Tange</em>.</p>
+    <p class="fade-in d2" data-i18n="ch2P2">A decade later, Tange ran the architecture department at the University of Tokyo. His office became the seedbed for the next generation.</p>
+    <p class="fade-in d3" data-i18n="ch2P3">By 1970, four men had passed through it:</p>
+    <div class="names fade-in d3">
+      <span>槇文彦</span><span>磯崎新</span><span>黒川紀章</span><span>谷口吉生</span>
+    </div>
+    <p class="fade-in d4" data-i18n="ch2P4">Three of them would later win the Pritzker Prize. All four would shape post-war Japan.</p>
+    <div class="viz fade-in d4" id="viz-tange"></div>
+  </div>
+</section>
+
+<!-- ── Scene 4: COUNTER-REVOLUTION ── -->
+<section class="scene" data-scene="counter">
+  <div class="scene-content">
+    <span class="scene-label fade-in" data-i18n="ch3Label">1960 — 2000 · Chapter 3</span>
+    <h2 class="fade-in d1" data-i18n="ch3Title">The Quiet<br>Counter-Revolution</h2>
+    <p class="fade-in d2" data-i18n="ch3P1">While Tange's disciples built towers and stadiums, <em>Kazuo Shinohara</em> taught at Tokyo Institute of Technology — a quieter school across town.</p>
+    <p class="fade-in d2" data-i18n="ch3P2">His students designed houses, not monuments. Concrete became cloth. Form gave way to atmosphere.</p>
+    <div class="viz fade-in d3" id="viz-counter"></div>
+    <p class="fade-in d4" data-i18n="ch3P3">Shinohara's most influential student was <em>Toyo Ito</em>. Ito's office, in turn, trained <em>Kazuyo Sejima</em> and <em>Ryue Nishizawa</em> — the duo that became SANAA.</p>
+    <p class="fade-in d4" data-i18n="ch3P4">In 2010, SANAA shared the Pritzker. The "quiet" lineage had taken the world.</p>
+    <div class="aside fade-in d4" data-i18n="ch3Aside">Two parallel lineages now shape modern Japan: Tange's — institutional, urban, modernist — and Shinohara's — atmospheric, intimate, theoretical.</div>
+  </div>
+</section>
+
+<!-- ── Scene 5: GOING GLOBAL ── -->
+<section class="scene" data-scene="global">
+  <div class="scene-content">
+    <span class="scene-label fade-in" data-i18n="ch4Label">2000 — 2026 · Chapter 4</span>
+    <h2 class="fade-in d1" data-i18n="ch4Title">Going Global</h2>
+    <p class="fade-in d2" data-i18n="ch4P1">By the 2010s, the disciples had become the masters. And they were building everywhere.</p>
+    <p class="fade-in d2" data-i18n="ch4P2"><em>Tadao Ando</em> in Venice and Fort Worth. <em>SANAA</em> at the Louvre-Lens. <em>Tsuyoshi Tane</em> in Estonia. <em>Shigeru Ban</em>'s cathedrals in New Zealand.</p>
+    <div class="viz fade-in d3" id="viz-global"></div>
+    <div class="viz-caption fade-in d3" data-i18n="ch4Caption">14 iconic works outside Japan, mapped to verified Wikipedia coordinates.</div>
+  </div>
+</section>
+
+<!-- ── Scene 6: PRITZKER ── -->
+<section class="scene" data-scene="pritzker">
+  <div class="scene-content">
+    <span class="scene-label fade-in" data-i18n="ch5Label">Recognition · Chapter 5</span>
+    <h2 class="fade-in d1" data-i18n="ch5Title">Eight <em>Pritzker</em> Prizes</h2>
+    <p class="fade-in d2" data-i18n="ch5P1">Japan has produced more Pritzker laureates than any country except the United States.</p>
+    <p class="fade-in d2" data-i18n="ch5P2">The youngest received it at <strong>44</strong>. The oldest at <strong>88</strong>. A 44-year span between architects of the same nation, the same generation of training.</p>
+    <div class="viz fade-in d3" id="viz-pritzker"></div>
+    <div class="pritzker-grid fade-in d4">
+      <div class="pritzker-row"><span class="pritzker-year">1987</span><span class="pritzker-name">丹下健三 Kenzo Tange</span><span class="pritzker-age">74</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">1993</span><span class="pritzker-name">槇文彦 Fumihiko Maki</span><span class="pritzker-age">65</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">1995</span><span class="pritzker-name">安藤忠雄 Tadao Ando</span><span class="pritzker-age">54</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">2010</span><span class="pritzker-name">妹島和世 + 西沢立衛 SANAA</span><span class="pritzker-age">54 / 44</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">2013</span><span class="pritzker-name">伊東豊雄 Toyo Ito</span><span class="pritzker-age">72</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">2014</span><span class="pritzker-name">坂茂 Shigeru Ban</span><span class="pritzker-age">57</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">2019</span><span class="pritzker-name">磯崎新 Arata Isozaki</span><span class="pritzker-age">88</span></div>
+      <div class="pritzker-row"><span class="pritzker-year">2024</span><span class="pritzker-name">山本理顕 Riken Yamamoto</span><span class="pritzker-age">79</span></div>
+    </div>
+    <div class="aside fade-in d4" data-i18n="ch5Aside">Why did Isozaki wait until 88? The Pritzker often "rewards" architects whose work was decades ahead of its acceptance. The zigzag above is the price of being early.</div>
+  </div>
+</section>
+
+<!-- ── Scene 7: CTA ── -->
+<section class="scene cta" data-scene="cta">
+  <div class="cta-wrap">
+    <h2 class="fade-in" data-i18n="ctaTitle">There are still <em>25 connections</em> to discover.</h2>
+    <p class="fade-in d1" data-i18n="ctaBody">The full network maps every master-disciple link — from foreign mentors to today's youngest practices. Filter by lineage, era, or Pritzker year. Every coordinate verified from Wikipedia.</p>
+    <a class="cta-btn fade-in d2" href="/" data-i18n="ctaBtn">Explore the network →</a>
+    <div class="footer-meta fade-in d3" data-i18n="ctaFooter">Source: Wikipedia EN / JA · Compiled 2026-05-06 · 38 architects · 54 verified works</div>
+  </div>
+</section>
+
+</article>
+
+<script src="data.js"></script>
+<script src="works.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ── i18n ──
+const STORY_I18N = {
+  en: {
+    htmlLang: 'en',
+    docTitle: 'Architects of Japan — A 110-year family tree',
+    meta: 'A scrolling essay · ~3 min read',
+    heroH1: 'Architects of <em>Japan</em>',
+    heroLede: 'From Le Corbusier to 田根剛 — a 110-year family tree of 38 lives and the masters who shaped them.',
+    statArchitects: 'Architects', statEdges: 'Lineage edges', statPritzker: 'Pritzker laureates', statAbroad: 'Works abroad',
+    scrollCue: 'SCROLL ↓',
+
+    ch1Label: '1900 — 1945 · Chapter 1', ch1Title: 'Imported Modernism',
+    ch1P1: 'In 1928, a 23-year-old graduate of Tokyo Imperial University boarded a ship for Marseille. His name was <em>Kunio Maekawa</em>.',
+    ch1P2: 'For two years he worked in Le Corbusier\'s atelier on Rue de Sèvres. Two years later, <em>Junzo Sakakura</em> arrived in the same studio.',
+    ch1P3: 'They returned to Japan with concrete, glass, and right angles. Modernism had crossed the Pacific — in Japanese hands.',
+    ch1Caption: 'Two students. One master. The bridge from Paris to Tokyo.',
+
+    ch2Label: '1946 — 1980 · Chapter 2', ch2Title: 'Tange\'s Empire',
+    ch2P1: 'In 1946, Maekawa hired a 33-year-old graduate named <em>Kenzo Tange</em>.',
+    ch2P2: 'A decade later, Tange ran the architecture department at the University of Tokyo. His office became the seedbed for the next generation.',
+    ch2P3: 'By 1970, four men had passed through it:',
+    ch2P4: 'Three of them would later win the Pritzker Prize. All four would shape post-war Japan.',
+
+    ch3Label: '1960 — 2000 · Chapter 3', ch3Title: 'The Quiet<br>Counter-Revolution',
+    ch3P1: 'While Tange\'s disciples built towers and stadiums, <em>Kazuo Shinohara</em> taught at Tokyo Institute of Technology — a quieter school across town.',
+    ch3P2: 'His students designed houses, not monuments. Concrete became cloth. Form gave way to atmosphere.',
+    ch3P3: 'Shinohara\'s most influential student was <em>Toyo Ito</em>. Ito\'s office, in turn, trained <em>Kazuyo Sejima</em> and <em>Ryue Nishizawa</em> — the duo that became SANAA.',
+    ch3P4: 'In 2010, SANAA shared the Pritzker. The "quiet" lineage had taken the world.',
+    ch3Aside: 'Two parallel lineages now shape modern Japan: Tange\'s — institutional, urban, modernist — and Shinohara\'s — atmospheric, intimate, theoretical.',
+
+    ch4Label: '2000 — 2026 · Chapter 4', ch4Title: 'Going Global',
+    ch4P1: 'By the 2010s, the disciples had become the masters. And they were building everywhere.',
+    ch4P2: '<em>Tadao Ando</em> in Venice and Fort Worth. <em>SANAA</em> at the Louvre-Lens. <em>Tsuyoshi Tane</em> in Estonia. <em>Shigeru Ban</em>\'s cathedrals in New Zealand.',
+    ch4Caption: '14 iconic works outside Japan, mapped to verified Wikipedia coordinates.',
+
+    ch5Label: 'Recognition · Chapter 5', ch5Title: 'Eight <em>Pritzker</em> Prizes',
+    ch5P1: 'Japan has produced more Pritzker laureates than any country except the United States.',
+    ch5P2: 'The youngest received it at <strong>44</strong>. The oldest at <strong>88</strong>. A 44-year span between architects of the same nation, the same generation of training.',
+    ch5Aside: 'Why did Isozaki wait until 88? The Pritzker often "rewards" architects whose work was decades ahead of its acceptance. The zigzag above is the price of being early.',
+
+    ctaTitle: 'There are still <em>25 connections</em> to discover.',
+    ctaBody: 'The full network maps every master-disciple link — from foreign mentors to today\'s youngest practices. Filter by lineage, era, or Pritzker year. Every coordinate verified from Wikipedia.',
+    ctaBtn: 'Explore the network →',
+    ctaFooter: 'Source: Wikipedia EN / JA · Compiled 2026-05-06 · 38 architects · 54 verified works'
+  },
+  zh: {
+    htmlLang: 'zh',
+    docTitle: '日本建筑师 — 110 年家谱',
+    meta: '滚动随笔 · 约 3 分钟阅读',
+    heroH1: '<em>日本</em>建筑师',
+    heroLede: '从 Le Corbusier 到 田根剛 —— 110 年家谱，38 位建筑师，与塑造他们的师傅们。',
+    statArchitects: '建筑师', statEdges: '师承关系', statPritzker: '普利兹克奖得主', statAbroad: '海外作品',
+    scrollCue: '滚动 ↓',
+
+    ch1Label: '1900 — 1945 · 第一章', ch1Title: '引入的现代主义',
+    ch1P1: '1928 年，一位 23 岁的东京帝国大学毕业生登上了开往马赛的轮船。他就是<em>前川國男</em>。',
+    ch1P2: '他在 Le Corbusier 巴黎 Rue de Sèvres 的事务所工作了两年。两年后，<em>坂倉準三</em>来到同一间工作室。',
+    ch1P3: '他们带着混凝土、玻璃和直角回到日本。现代主义跨越了太平洋——以日本之手。',
+    ch1Caption: '两个学生。一位老师。从巴黎到东京的桥梁。',
+
+    ch2Label: '1946 — 1980 · 第二章', ch2Title: '丹下王朝',
+    ch2P1: '1946 年，前川聘请了一位 33 岁的青年——<em>丹下健三</em>。',
+    ch2P2: '十年后，丹下执掌东京大学建筑系。他的事务所成了下一代的孵化器。',
+    ch2P3: '到 1970 年，四位年轻人从这里走出：',
+    ch2P4: '其中三位日后获得普利兹克奖。四位都将塑造战后日本。',
+
+    ch3Label: '1960 — 2000 · 第三章', ch3Title: '安静的<br>反革命',
+    ch3P1: '当丹下的弟子们建造塔楼与体育馆时，<em>篠原一男</em>在东京工业大学讲学——城市另一端，更安静的学府。',
+    ch3P2: '他的学生设计住宅，不是纪念碑。混凝土变成织物，形式让位于氛围。',
+    ch3P3: '篠原最有影响力的学生是<em>伊東豊雄</em>。伊東的事务所又孕育出<em>妹島和世</em>和<em>西沢立衛</em>——后来的 SANAA。',
+    ch3P4: '2010 年，SANAA 共同获得普利兹克奖。「安静」一线终于走向世界。',
+    ch3Aside: '两条平行的传承塑造着现代日本——丹下的：体制、城市、现代主义；篠原的：氛围、亲密、理论。',
+
+    ch4Label: '2000 — 2026 · 第四章', ch4Title: '走向全球',
+    ch4P1: '到 2010 年代，弟子已成为大师。他们开始在全球建造。',
+    ch4P2: '<em>安藤忠雄</em>在威尼斯与德州。<em>SANAA</em>在卢浮宫朗斯馆。<em>田根剛</em>在爱沙尼亚。<em>坂茂</em>的纸教堂在新西兰。',
+    ch4Caption: '14 件代表作分布于日本之外，每个坐标均经 Wikipedia 核实。',
+
+    ch5Label: '认可 · 第五章', ch5Title: '八座<em>普利兹克</em>奖',
+    ch5P1: '除美国外，日本是产出普利兹克得主最多的国家。',
+    ch5P2: '最年轻的获奖者：<strong>44 岁</strong>。最年长的：<strong>88 岁</strong>。同一国家、同一代受训背景，认可时间相差 44 年。',
+    ch5Aside: '为什么磯崎要等到 88 岁？普利兹克常「补颁」给那些早于时代的建筑师。zigzag 折线，是先行者的代价。',
+
+    ctaTitle: '还有 <em>25 条联系</em>等你发现。',
+    ctaBody: '完整网络收录所有师承关系——从外籍恩师到当今最年轻的事务所。可按 lineage、年代或普利兹克年筛选。每个坐标均来自 Wikipedia 验证。',
+    ctaBtn: '探索完整网络 →',
+    ctaFooter: '出处：Wikipedia EN / JA · 编纂于 2026-05-06 · 38 位建筑师 · 54 件验证作品'
+  },
+  ja: {
+    htmlLang: 'ja',
+    docTitle: '日本の建築家たち — 110 年の系譜',
+    meta: 'スクロールエッセイ · 約 3 分',
+    heroH1: '<em>日本</em>の建築家たち',
+    heroLede: 'ル・コルビュジエから田根剛まで —— 110 年の系譜、38 人の建築家、彼らを形づくった師たち。',
+    statArchitects: '建築家', statEdges: '師承の数', statPritzker: 'プリツカー賞', statAbroad: '海外作品',
+    scrollCue: 'スクロール ↓',
+
+    ch1Label: '1900 — 1945 · 第 1 章', ch1Title: '輸入されたモダニズム',
+    ch1P1: '1928 年、東京帝国大学を卒業したばかりの 23 歳の青年が、横浜からマルセイユ行きの船に乗った。<em>前川國男</em>である。',
+    ch1P2: '彼はル・コルビュジエのパリ、Rue de Sèvres のアトリエで 2 年間働いた。2 年後、<em>坂倉準三</em>が同じ工房に入る。',
+    ch1P3: '彼らはコンクリート、ガラス、直角を持ち帰った。モダニズムは太平洋を渡った——日本人の手で。',
+    ch1Caption: '二人の弟子。一人の師。パリと東京を結ぶ架け橋。',
+
+    ch2Label: '1946 — 1980 · 第 2 章', ch2Title: '丹下の帝国',
+    ch2P1: '1946 年、前川は 33 歳の若手を雇った。<em>丹下健三</em>である。',
+    ch2P2: '10 年後、丹下は東京大学建築学科を率いていた。彼の研究室は次世代の温床となった。',
+    ch2P3: '1970 年までに、4 人がそこから巣立った：',
+    ch2P4: 'うち 3 人がのちにプリツカー賞を受賞する。4 人とも戦後日本を形づくった。',
+
+    ch3Label: '1960 — 2000 · 第 3 章', ch3Title: '静かなる<br>反革命',
+    ch3P1: '丹下の弟子たちが塔と競技場を建てる傍らで、<em>篠原一男</em>は東京工業大学で教えていた——街の反対側、もう一つの学校で。',
+    ch3P2: '彼の学生たちは住宅を設計した。記念碑ではなく。コンクリートは布になり、形式は雰囲気に道を譲った。',
+    ch3P3: '篠原の最も影響力のある学生は<em>伊東豊雄</em>だった。伊東の事務所はやがて<em>妹島和世</em>と<em>西沢立衛</em>を育てる——のちの SANAA である。',
+    ch3P4: '2010 年、SANAA がプリツカー賞を共同受賞。「静かな」系譜が世界を制した。',
+    ch3Aside: '今日の日本建築を形づくる二つの並行する系譜——丹下の：制度的、都市的、モダニズム；篠原の：雰囲気的、親密、理論的。',
+
+    ch4Label: '2000 — 2026 · 第 4 章', ch4Title: '世界へ',
+    ch4P1: '2010 年代、弟子たちは師となった。彼らは世界中で建てはじめた。',
+    ch4P2: '<em>安藤忠雄</em>はヴェネツィアとフォートワース。<em>SANAA</em>はルーヴル・ランス。<em>田根剛</em>はエストニア。<em>坂茂</em>の紙の教会はニュージーランド。',
+    ch4Caption: '海外の代表作 14 件、すべての座標は Wikipedia で検証済み。',
+
+    ch5Label: '認知 · 第 5 章', ch5Title: '八つの<em>プリツカー</em>賞',
+    ch5P1: 'アメリカ以外で最も多くプリツカー賞受賞者を輩出した国——それが日本である。',
+    ch5P2: '最年少 <strong>44 歳</strong>。最高齢 <strong>88 歳</strong>。同じ国、同じ世代の訓練を受けた建築家たちの間に、44 年の認可の幅がある。',
+    ch5Aside: 'なぜ磯崎は 88 歳まで待ったのか？プリツカー賞はしばしば、時代に先立つ建築家へ「遅延的に」報いる。zigzag は、早すぎた者の代価である。',
+
+    ctaTitle: '発見すべき<em>25 のつながり</em>が、まだ残っている。',
+    ctaBody: '完全なネットワークはすべての師弟関係を収めている——外国人師から、最新世代の事務所まで。系統、世代、プリツカー年でフィルタリング可能。すべての座標は Wikipedia から検証済み。',
+    ctaBtn: 'ネットワークを探る →',
+    ctaFooter: '出典：Wikipedia EN / JA · 編纂 2026-05-06 · 建築家 38 名 · 検証作品 54 件'
+  }
+};
+
+let currentLang = 'en';
+function applyStoryLang() {
+  const T = STORY_I18N[currentLang];
+  document.documentElement.lang = T.htmlLang;
+  document.title = T.docTitle;
+  Object.entries(T).forEach(([key, value]) => {
+    if (typeof value !== 'string' || key === 'htmlLang' || key === 'docTitle') return;
+    document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => {
+      el.innerHTML = value;
+    });
+  });
+}
+document.querySelectorAll('#lang-switch button').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('#lang-switch button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentLang = btn.dataset.lang;
+    applyStoryLang();
+  };
+});
+applyStoryLang();
+
+// IntersectionObserver: add 'in-view' to scenes when entering viewport
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+      const sceneId = e.target.dataset.scene;
+      if (sceneId && renderers[sceneId]) renderers[sceneId]();
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.scene').forEach(s => io.observe(s));
+
+const renderers = {
+  origin: () => {
+    if (renderers.origin.done) return; renderers.origin.done = true;
+    const svg = d3.select('#viz-origin').append('svg').attr('class', 'viz-svg').attr('viewBox', '0 0 600 200');
+    const data = [
+      { x: 300, y: 60,  label: 'Le Corbusier', sub: '1887–1965', cls: 'gold' },
+      { x: 160, y: 150, label: '前川國男 Maekawa', sub: '1928 →', cls: 'slate' },
+      { x: 440, y: 150, label: '坂倉準三 Sakakura', sub: '1930 →', cls: 'slate' }
+    ];
+    svg.selectAll('line.story-edge').data([1,2]).join('line')
+      .attr('class', 'story-edge gold draw-line')
+      .attr('x1', 300).attr('y1', 70)
+      .attr('x2', (_,i) => i === 0 ? 170 : 430).attr('y2', 140);
+    const g = svg.selectAll('g.story-node').data(data).join('g').attr('class', d => `story-node ${d.cls}`).attr('transform', d => `translate(${d.x},${d.y})`);
+    g.append('circle').attr('r', d => d.cls === 'gold' ? 10 : 7);
+    g.append('text').attr('y', d => d.cls === 'gold' ? -32 : 22).attr('text-anchor', 'middle').text(d => d.label);
+    g.append('text').attr('y', d => d.cls === 'gold' ? -18 : 36).attr('text-anchor', 'middle').style('font-size', '9.5px').style('fill', 'var(--muted)').text(d => d.sub);
+  },
+
+  tange: () => {
+    if (renderers.tange.done) return; renderers.tange.done = true;
+    const svg = d3.select('#viz-tange').append('svg').attr('class', 'viz-svg').attr('viewBox', '0 0 700 240');
+    const center = { x: 350, y: 80 };
+    const disciples = [
+      { x: 100,  y: 200, label: '槇文彦' },
+      { x: 250, y: 220, label: '磯崎新' },
+      { x: 450, y: 220, label: '黒川紀章' },
+      { x: 600,  y: 200, label: '谷口吉生' }
+    ];
+    svg.selectAll('line.story-edge').data(disciples).join('line')
+      .attr('class', 'story-edge draw-line')
+      .attr('x1', center.x).attr('y1', center.y + 8)
+      .attr('x2', d => d.x).attr('y2', d => d.y - 8);
+    // Center: Tange
+    const cg = svg.append('g').attr('class', 'story-node gold').attr('transform', `translate(${center.x},${center.y})`);
+    cg.append('circle').attr('r', 12);
+    cg.append('text').attr('y', -18).attr('text-anchor', 'middle').style('font-size', '13px').style('font-weight', '500').text('丹下健三 Kenzo Tange');
+    // Disciples
+    const dg = svg.selectAll('g.disciple').data(disciples).join('g').attr('class', 'story-node slate').attr('transform', d => `translate(${d.x},${d.y})`);
+    dg.append('circle').attr('r', 7);
+    dg.append('text').attr('y', 22).attr('text-anchor', 'middle').text(d => d.label);
+  },
+
+  counter: () => {
+    if (renderers.counter.done) return; renderers.counter.done = true;
+    const svg = d3.select('#viz-counter').append('svg').attr('class', 'viz-svg').attr('viewBox', '0 0 700 280');
+    // Two parallel lineages — Tange (top) vs Shinohara (bottom)
+    const tange = ['丹下健三','槇文彦','磯崎新','黒川紀章'];
+    const shino = ['篠原一男','伊東豊雄','妹島和世','石上純也'];
+    const xs = [80, 260, 440, 620];
+    const renderRow = (names, y, cls, label) => {
+      svg.append('text').attr('x', 30).attr('y', y + 4).style('font-size', '10px').style('fill', 'var(--muted)').style('letter-spacing', '0.15em').text(label);
+      svg.selectAll(`line.${cls}`).data([0,1,2]).join('line')
+        .attr('class', `story-edge draw-line ${cls === 'gold' ? 'gold' : ''}`)
+        .attr('x1', (_,i) => xs[i] + 10).attr('y1', y)
+        .attr('x2', (_,i) => xs[i+1] - 10).attr('y2', y);
+      const g = svg.selectAll(`g.${cls}-node`).data(names).join('g').attr('class', `story-node ${cls}`).attr('transform', (_,i) => `translate(${xs[i]},${y})`);
+      g.append('circle').attr('r', 7);
+      g.append('text').attr('y', y < 100 ? -14 : 22).attr('text-anchor', 'middle').text(d => d);
+    };
+    renderRow(tange, 70, 'slate', 'TANGE');
+    renderRow(shino, 200, 'gold', 'SHINOHARA');
+  },
+
+  global: () => {
+    if (renderers.global.done) return; renderers.global.done = true;
+    const div = d3.select('#viz-global').append('div').attr('class', 'map-container').attr('id', 'story-map');
+    setTimeout(() => {
+      const map = L.map('story-map', { zoomControl: false, attributionControl: false, scrollWheelZoom: false }).setView([20, 60], 2);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 8 }).addTo(map);
+      const overseas = window.WORKS.filter(w => w.overseas);
+      overseas.forEach(w => {
+        L.circleMarker([w.lat, w.lng], { radius: 6, color: '#b8893d', weight: 1.5, fillColor: '#b8893d', fillOpacity: 0.7 })
+          .bindTooltip(`<strong>${w.name}</strong>`, { direction: 'top', offset: [0,-6] })
+          .addTo(map);
+      });
+      if (overseas.length) {
+        map.fitBounds(L.latLngBounds(overseas.map(w => [w.lat, w.lng])), { padding: [40,40] });
+      }
+    }, 400);
+  },
+
+  pritzker: () => {
+    if (renderers.pritzker.done) return; renderers.pritzker.done = true;
+    const svg = d3.select('#viz-pritzker').append('svg').attr('class', 'viz-svg').attr('viewBox', '0 0 700 200');
+    const winners = [
+      { year: 1987, age: 74, name: '丹下' },
+      { year: 1993, age: 65, name: '槇' },
+      { year: 1995, age: 54, name: '安藤' },
+      { year: 2010, age: 54, name: '妹島' },
+      { year: 2010, age: 44, name: '西沢' },
+      { year: 2013, age: 72, name: '伊東' },
+      { year: 2014, age: 57, name: '坂' },
+      { year: 2019, age: 88, name: '磯崎' },
+      { year: 2024, age: 79, name: '山本' }
+    ];
+    const xScale = d3.scaleLinear().domain([1985, 2025]).range([60, 660]);
+    const yScale = d3.scaleLinear().domain([40, 95]).range([170, 30]);
+    // axes
+    svg.append('line').attr('x1', 50).attr('y1', 170).attr('x2', 670).attr('y2', 170).attr('stroke', 'var(--rule)');
+    [1990, 2000, 2010, 2020].forEach(y => {
+      svg.append('text').attr('x', xScale(y)).attr('y', 188).attr('text-anchor', 'middle').style('font-size', '10px').style('fill', 'var(--muted)').text(y);
+    });
+    // path
+    const pathD = winners.map((w,i) => `${i===0?'M':'L'}${xScale(w.year)},${yScale(w.age)}`).join('');
+    svg.append('path').attr('d', pathD).attr('class', 'story-edge gold draw-line').attr('stroke-width', 1.5);
+    // dots
+    const g = svg.selectAll('g.dot').data(winners).join('g').attr('class', 'story-node gold').attr('transform', d => `translate(${xScale(d.year)},${yScale(d.age)})`);
+    g.append('circle').attr('r', 5);
+    g.append('text').attr('y', -10).attr('text-anchor', 'middle').style('font-size', '10px').text(d => d.name);
+    g.append('text').attr('y', 16).attr('text-anchor', 'middle').style('font-size', '9px').style('fill', 'var(--muted)').text(d => d.age);
+    // y-axis labels
+    svg.append('text').attr('x', 30).attr('y', yScale(50)).style('font-size', '9px').style('fill', 'var(--muted)').text('age 50');
+    svg.append('text').attr('x', 30).attr('y', yScale(80)).style('font-size', '9px').style('fill', 'var(--muted)').text('age 80');
+  },
+
+  cta: () => {} // no viz
+};
+</script>
+
+</body>
+</html>

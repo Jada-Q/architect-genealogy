@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Yokosuka Museum of Art",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Yokosuka Museum of Art</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q11543551",
+  "titles": {
+    "canonical": "Yokosuka_Museum_of_Art",
+    "normalized": "Yokosuka Museum of Art",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Yokosuka Museum of Art</span></span>"
+  },
+  "pageid": 48212306,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yokosuka_Museum_of_Art_2009.jpg/330px-Yokosuka_Museum_of_Art_2009.jpg",
+    "width": 330,
+    "height": 155
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Yokosuka_Museum_of_Art_2009.jpg/3840px-Yokosuka_Museum_of_Art_2009.jpg",
+    "width": 4256,
+    "height": 2002
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345629211",
+  "tid": "eee448f1-2995-11f1-b782-de6c94c41b2b",
+  "timestamp": "2026-03-27T04:32:16Z",
+  "description": "Museum in Yokosuka, Kanagawa Prefecture, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.25941,
+    "lon": 139.73798
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Yokosuka_Museum_of_Art",
+      "revisions": "https://en.wikipedia.org/wiki/Yokosuka_Museum_of_Art?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Yokosuka_Museum_of_Art?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Yokosuka_Museum_of_Art"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Yokosuka_Museum_of_Art",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Yokosuka_Museum_of_Art",
+      "edit": "https://en.wikipedia.org/wiki/Yokosuka_Museum_of_Art?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Yokosuka_Museum_of_Art"
+    }
+  },
+  "extract": "Yokosuka Museum of Art  opened in Kannonzaki Park , Yokosuka, Kanagawa Prefecture, Japan, in 2007. Architect: Riken Yamamoto. The collection, numbering some 5,000 pieces, includes works by Fujishima Takeji and Nakamura Tsune.",
+  "extract_html": "<p><b>Yokosuka Museum of Art</b><span style=\"font-weight:normal\"> </span> opened in Kannonzaki Park<span style=\"font-weight:normal\"> </span>, Yokosuka, Kanagawa Prefecture, Japan, in 2007. Architect: Riken Yamamoto. The collection, numbering some 5,000 pieces, includes works by Fujishima Takeji and Nakamura Tsune.</p>"
+}

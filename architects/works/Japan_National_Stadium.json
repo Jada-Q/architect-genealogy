@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Japan National Stadium",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Japan National Stadium</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q14862239",
+  "titles": {
+    "canonical": "Japan_National_Stadium",
+    "normalized": "Japan National Stadium",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Japan National Stadium</span></span>"
+  },
+  "pageid": 52764427,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Japan_National_Stadium_C-gate_on_2021_July_28.jpg/330px-Japan_National_Stadium_C-gate_on_2021_July_28.jpg",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Japan_National_Stadium_C-gate_on_2021_July_28.jpg/3840px-Japan_National_Stadium_C-gate_on_2021_July_28.jpg",
+    "width": 4032,
+    "height": 3024
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1347577491",
+  "tid": "bbef5f00-328d-11f1-a15c-0949d38a42e2",
+  "timestamp": "2026-04-07T14:26:15Z",
+  "description": "Multi-purpose stadium in Tokyo",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.67819444,
+    "lon": 139.71458333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Japan_National_Stadium",
+      "revisions": "https://en.wikipedia.org/wiki/Japan_National_Stadium?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Japan_National_Stadium?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Japan_National_Stadium"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Japan_National_Stadium",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Japan_National_Stadium",
+      "edit": "https://en.wikipedia.org/wiki/Japan_National_Stadium?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Japan_National_Stadium"
+    }
+  },
+  "extract": "The National Stadium , alternatively Olympic Stadium , currently known as MUFG Stadium  for sponsorship reasons, and formerly known as New National Stadium , is a multipurpose stadium in Tokyo, Japan. Opened in 2019 and originally constructed for the 2020 Summer Olympics and Paralympics, it hosted the ceremonies and track and field events. Since the Games, the stadium has primarily been used for association football and rugby union events.",
+  "extract_html": "<p>The <b>National Stadium</b><span style=\"font-weight:normal\"> </span>, alternatively <b>Olympic Stadium</b><span style=\"font-weight:normal\"> </span>, currently known as <b>MUFG Stadium</b><span style=\"font-weight:normal\"> </span> for sponsorship reasons, and formerly known as <b>New National Stadium</b><span style=\"font-weight:normal\"> </span>, is a multipurpose stadium in Tokyo, Japan. Opened in 2019 and originally constructed for the 2020 Summer Olympics and Paralympics, it hosted the ceremonies and track and field events. Since the Games, the stadium has primarily been used for association football and rugby union events.</p>"
+}

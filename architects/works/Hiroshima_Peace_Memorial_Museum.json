@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Hiroshima Peace Memorial Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Hiroshima Peace Memorial Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1200076",
+  "titles": {
+    "canonical": "Hiroshima_Peace_Memorial_Museum",
+    "normalized": "Hiroshima Peace Memorial Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Hiroshima Peace Memorial Museum</span></span>"
+  },
+  "pageid": 6207496,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Hiroshima_Peace_Memorial_Museum_2009.jpg/330px-Hiroshima_Peace_Memorial_Museum_2009.jpg",
+    "width": 330,
+    "height": 150
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Hiroshima_Peace_Memorial_Museum_2009.jpg",
+    "width": 2534,
+    "height": 1154
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1346122148",
+  "tid": "be8dec36-2bdb-11f1-a1f9-7ecaf88c1e81",
+  "timestamp": "2026-03-30T01:57:02Z",
+  "description": "Peace museum in Hiroshima, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.39166667,
+    "lon": 132.45194444
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Hiroshima_Peace_Memorial_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Hiroshima_Peace_Memorial_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Hiroshima_Peace_Memorial_Museum"
+    }
+  },
+  "extract": "The Hiroshima Peace Memorial Museum is a museum in Hiroshima Peace Memorial Park, in central Hiroshima, Japan, dedicated to documenting the atomic bombing of Hiroshima in World War II.",
+  "extract_html": "<p>The <b>Hiroshima Peace Memorial Museum</b> is a museum in Hiroshima Peace Memorial Park, in central Hiroshima, Japan, dedicated to documenting the atomic bombing of Hiroshima in World War II.</p>"
+}

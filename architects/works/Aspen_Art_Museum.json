@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Aspen Art Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Aspen Art Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2854654",
+  "titles": {
+    "canonical": "Aspen_Art_Museum",
+    "normalized": "Aspen Art Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Aspen Art Museum</span></span>"
+  },
+  "pageid": 26131419,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Aspen_Art_Museum_by_Shigeru_Ban.jpg/330px-Aspen_Art_Museum_by_Shigeru_Ban.jpg",
+    "width": 330,
+    "height": 227
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/43/Aspen_Art_Museum_by_Shigeru_Ban.jpg",
+    "width": 1000,
+    "height": 688
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345586381",
+  "tid": "a745c8fb-2965-11f1-a7e2-476f3e55561e",
+  "timestamp": "2026-03-26T22:46:40Z",
+  "description": "Art museum in Colorado, United States",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 39.19361111,
+    "lon": -106.81666667
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Aspen_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Aspen_Art_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Aspen_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Aspen_Art_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Aspen_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Aspen_Art_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Aspen_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Aspen_Art_Museum"
+    }
+  },
+  "extract": "Founded in 1979, the Aspen Art Museum (AAM) is a non-collecting contemporary art museum located in Aspen, Colorado, United States. Its current Artistic Director and CEO is Nicola Lees who was appointed in 2020.",
+  "extract_html": "<p>Founded in 1979, the <b>Aspen Art Museum</b> (AAM) is a non-collecting contemporary art museum located in Aspen, Colorado, United States. Its current Artistic Director and CEO is Nicola Lees who was appointed in 2020.</p>"
+}

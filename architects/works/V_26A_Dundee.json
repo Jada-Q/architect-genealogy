@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "V&A Dundee",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">V&amp;A Dundee</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q43674688",
+  "titles": {
+    "canonical": "V&A_Dundee",
+    "normalized": "V&A Dundee",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">V&amp;A Dundee</span></span>"
+  },
+  "pageid": 53502696,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Victoria_and_Albert_Museum_Logo.svg/330px-Victoria_and_Albert_Museum_Logo.svg.png",
+    "width": 330,
+    "height": 189
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Victoria_and_Albert_Museum_Logo.svg/960px-Victoria_and_Albert_Museum_Logo.svg.png",
+    "width": 512,
+    "height": 293
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1351037524",
+  "tid": "2260e3af-40bc-11f1-9d85-7e32c90af8fd",
+  "timestamp": "2026-04-25T15:33:40Z",
+  "description": "Design museum in Dundee, Scotland",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 56.45747222,
+    "lon": -2.96722222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/V%26A_Dundee",
+      "revisions": "https://en.wikipedia.org/wiki/V%26A_Dundee?action=history",
+      "edit": "https://en.wikipedia.org/wiki/V%26A_Dundee?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:V%26A_Dundee"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/V%26A_Dundee",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/V%26A_Dundee",
+      "edit": "https://en.wikipedia.org/wiki/V%26A_Dundee?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:V%26A_Dundee"
+    }
+  },
+  "extract": "V&A Dundee is a design museum in Dundee, Scotland, which opened on 15 September 2018. The V&A Dundee is the first design museum in Scotland and the first Victoria and Albert museum outside London. The V&A Dundee is also the first building in the United Kingdom designed by Kengo Kuma, whose vision was for a 'living room for the city'.",
+  "extract_html": "<p><b>V&amp;A Dundee</b> is a design museum in Dundee, Scotland, which opened on 15 September 2018. The V&amp;A Dundee is the first design museum in Scotland and the first Victoria and Albert museum outside London. The V&amp;A Dundee is also the first building in the United Kingdom designed by Kengo Kuma, whose vision was for a 'living room for the city'.</p>"
+}

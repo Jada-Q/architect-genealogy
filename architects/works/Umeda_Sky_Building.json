@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Umeda Sky Building",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Umeda Sky Building</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1151808",
+  "titles": {
+    "canonical": "Umeda_Sky_Building",
+    "normalized": "Umeda Sky Building",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Umeda Sky Building</span></span>"
+  },
+  "pageid": 1026313,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/2018_Umeda_Sky_Building.jpg/330px-2018_Umeda_Sky_Building.jpg",
+    "width": 330,
+    "height": 490
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f9/2018_Umeda_Sky_Building.jpg",
+    "width": 1684,
+    "height": 2500
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344892586",
+  "tid": "7914731b-2669-11f1-95ba-b22f575ec7ed",
+  "timestamp": "2026-03-23T03:36:27Z",
+  "description": "Skyscraper in Osaka, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.70527778,
+    "lon": 135.48972222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Umeda_Sky_Building",
+      "revisions": "https://en.wikipedia.org/wiki/Umeda_Sky_Building?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Umeda_Sky_Building?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Umeda_Sky_Building"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Umeda_Sky_Building",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Umeda_Sky_Building",
+      "edit": "https://en.wikipedia.org/wiki/Umeda_Sky_Building?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Umeda_Sky_Building"
+    }
+  },
+  "extract": "The Umeda Sky Building  is a two-tower mixed-use skyscraper in Osaka, Japan. Located on the outskirts of the Umeda business district in Kita-ku, Osaka, the Umeda Sky Building consists of two 40-story towers interconnected at their two uppermost stories via glass bridges with escalators and elevators that cross an open atrium space. It is currently the fifteenth-tallest building in the prefecture.",
+  "extract_html": "<p>The <b>Umeda Sky Building</b><span style=\"font-weight:normal\"> </span> is a two-tower mixed-use skyscraper in Osaka, Japan. Located on the outskirts of the Umeda business district in Kita-ku, Osaka, the Umeda Sky Building consists of two 40-story towers interconnected at their two uppermost stories via glass bridges with escalators and elevators that cross an open atrium space. It is currently the fifteenth-tallest building in the prefecture.</p>"
+}

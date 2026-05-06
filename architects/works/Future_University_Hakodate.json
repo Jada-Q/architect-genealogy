@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Future University Hakodate",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Future University Hakodate</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q835738",
+  "titles": {
+    "canonical": "Future_University_Hakodate",
+    "normalized": "Future University Hakodate",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Future University Hakodate</span></span>"
+  },
+  "pageid": 12991324,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Future_University-Hakodate.JPG/330px-Future_University-Hakodate.JPG",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Future_University-Hakodate.JPG",
+    "width": 500,
+    "height": 375
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1223943321",
+  "tid": "4560a88f-129a-11ef-9d82-a6d913d21ec1",
+  "timestamp": "2024-05-15T09:05:27Z",
+  "description": "Public university in Hakodate, Hokkaidō, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 41.84180556,
+    "lon": 140.767
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Future_University_Hakodate",
+      "revisions": "https://en.wikipedia.org/wiki/Future_University_Hakodate?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Future_University_Hakodate?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Future_University_Hakodate"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Future_University_Hakodate",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Future_University_Hakodate",
+      "edit": "https://en.wikipedia.org/wiki/Future_University_Hakodate?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Future_University_Hakodate"
+    }
+  },
+  "extract": "Future University Hakodate  is a public university in the city of Hakodate, Hokkaidō, Japan, established in 2000. The university's School of Systems Information Science is separated into two departments: the Department of Media Architecture and the Department of Complex and Intelligent Systems.",
+  "extract_html": "<p><b>Future University Hakodate</b><span style=\"font-weight:normal\"> </span> is a public university in the city of Hakodate, Hokkaidō, Japan, established in 2000. The university's School of Systems Information Science is separated into two departments: the Department of Media Architecture and the Department of Complex and Intelligent Systems.</p>"
+}

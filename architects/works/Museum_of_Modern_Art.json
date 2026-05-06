@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Museum of Modern Art",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Museum of Modern Art</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q188740",
+  "titles": {
+    "canonical": "Museum_of_Modern_Art",
+    "normalized": "Museum of Modern Art",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Museum of Modern Art</span></span>"
+  },
+  "pageid": 66107,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/MoMa_NY_USA_1.jpg/330px-MoMa_NY_USA_1.jpg",
+    "width": 330,
+    "height": 440
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/8b/MoMa_NY_USA_1.jpg",
+    "width": 1536,
+    "height": 2048
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1351301586",
+  "tid": "2c373325-41ef-11f1-84be-7c67fb088a8d",
+  "timestamp": "2026-04-27T04:11:32Z",
+  "description": "Art museum in New York City, US",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 40.7617,
+    "lon": -73.9775
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art",
+      "revisions": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Museum_of_Modern_Art"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Museum_of_Modern_Art",
+      "edit": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Museum_of_Modern_Art"
+    }
+  },
+  "extract": "The Museum of Modern Art (MoMA) is an art museum located in Midtown Manhattan, New York City, on 53rd Street between Fifth and Sixth Avenues. MoMA's collection spans the late 19th century to the present, and includes over 200,000 works of architecture and design, drawing, painting, sculpture, photography, prints, illustrated and artist's books, film, as well as electronic media. The museum has been instrumental in shaping the history of modern art, particularly modern art from Europe.",
+  "extract_html": "<p>The <b>Museum of Modern Art</b> (<b>MoMA</b>) is an art museum located in Midtown Manhattan, New York City, on 53rd Street between Fifth and Sixth Avenues. MoMA's collection spans the late 19th century to the present, and includes over 200,000 works of architecture and design, drawing, painting, sculpture, photography, prints, illustrated and artist's books, film, as well as electronic media. The museum has been instrumental in shaping the history of modern art, particularly modern art from Europe.</p>"
+}

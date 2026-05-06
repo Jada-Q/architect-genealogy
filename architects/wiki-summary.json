@@ -1,0 +1,180 @@
+[
+  {
+    "id": "ando",
+    "label": "安藤忠雄",
+    "status": "SKIP"
+  },
+  {
+    "id": "kuma",
+    "label": "隈研吾",
+    "status": "SKIP"
+  },
+  {
+    "id": "ito",
+    "label": "伊東豊雄",
+    "status": "SKIP"
+  },
+  {
+    "id": "sejima",
+    "label": "妹島和世 (SANAA)",
+    "status": "SKIP"
+  },
+  {
+    "id": "nishizawa",
+    "label": "西沢立衛 (SANAA)",
+    "status": "SKIP"
+  },
+  {
+    "id": "fujimoto",
+    "label": "藤本壮介",
+    "status": "SKIP"
+  },
+  {
+    "id": "ban",
+    "label": "坂茂",
+    "status": "SKIP"
+  },
+  {
+    "id": "ishigami",
+    "label": "石上純也",
+    "status": "SKIP"
+  },
+  {
+    "id": "hirata",
+    "label": "平田晃久",
+    "status": "SKIP"
+  },
+  {
+    "id": "yamamoto",
+    "label": "山本理顕",
+    "status": "SKIP"
+  },
+  {
+    "id": "bowwow",
+    "label": "Atelier Bow-Wow",
+    "status": "SKIP"
+  },
+  {
+    "id": "tange",
+    "label": "丹下健三",
+    "status": "SKIP"
+  },
+  {
+    "id": "maki",
+    "label": "槇文彦",
+    "status": "SKIP"
+  },
+  {
+    "id": "isozaki",
+    "label": "磯崎新",
+    "status": "SKIP"
+  },
+  {
+    "id": "kurokawa",
+    "label": "黒川紀章",
+    "status": "SKIP"
+  },
+  {
+    "id": "hara",
+    "label": "原広司",
+    "wikiTitle": "Hiroshi_Hara",
+    "summaryExtract": "Hiroshi Hara may refer to:Hiroshi Hara (architect) (1936–2025), Japanese architect\nHiroshi Hara (botanist) (1911–1986), Japanese botanist\n",
+    "htmlSize": 4221,
+    "ms": 733,
+    "status": "OK"
+  },
+  {
+    "id": "kikutake",
+    "label": "菊竹清訓",
+    "status": "SKIP"
+  },
+  {
+    "id": "taniguchi",
+    "label": "谷口吉生",
+    "status": "SKIP"
+  },
+  {
+    "id": "nagayama",
+    "label": "永山祐子",
+    "status": "SKIP"
+  },
+  {
+    "id": "naito",
+    "label": "内藤廣",
+    "status": "SKIP"
+  },
+  {
+    "id": "tanijiri",
+    "label": "谷尻誠",
+    "status": "FAIL",
+    "error": "summary 404"
+  },
+  {
+    "id": "maekawa",
+    "label": "前川國男",
+    "status": "SKIP"
+  },
+  {
+    "id": "murano",
+    "label": "村野藤吾",
+    "status": "SKIP"
+  },
+  {
+    "id": "sakakura",
+    "label": "坂倉準三",
+    "status": "SKIP"
+  },
+  {
+    "id": "yoshimura",
+    "label": "吉村順三",
+    "status": "SKIP"
+  },
+  {
+    "id": "taniguchi_y",
+    "label": "谷口吉郎",
+    "wikiTitle": "Yoshirō_Taniguchi",
+    "summaryExtract": "Yoshirō Taniguchi  was a Japanese architect. He was born in the city of Kanazawa, Ishikawa Prefecture, Japan. He was a graduate of Tokyo University Department of Architecture and professor at Tokyo In",
+    "htmlSize": 53212,
+    "ms": 1463,
+    "status": "OK"
+  },
+  {
+    "id": "shinohara",
+    "label": "篠原一男",
+    "wikiTitle": "Kazuo_Shinohara",
+    "summaryExtract": "Kazuo Shinohara  was a Japanese architect, forming what is now widely known as the \"Shinohara School\", which has been linked to the works of Toyo Ito, Kazunari Sakamoto and Itsuko Hasegawa, Kazuyo Sej",
+    "htmlSize": 47586,
+    "ms": 908,
+    "status": "OK"
+  },
+  {
+    "id": "hasegawa",
+    "label": "長谷川逸子",
+    "wikiTitle": "Itsuko_Hasegawa",
+    "summaryExtract": "Itsuko Hasegawa  is a Japanese architect.",
+    "htmlSize": 44898,
+    "ms": 1154,
+    "status": "OK"
+  },
+  {
+    "id": "fujimori",
+    "label": "藤森照信",
+    "wikiTitle": "Terunobu_Fujimori",
+    "summaryExtract": "Terunobu Fujimori  is a Japanese architect and architectural historian.",
+    "htmlSize": 84579,
+    "ms": 2019,
+    "status": "OK"
+  },
+  {
+    "id": "tezuka",
+    "label": "手塚貴晴+由比",
+    "status": "FAIL",
+    "error": "summary 404"
+  },
+  {
+    "id": "go_hasegawa",
+    "label": "長谷川豪",
+    "status": "FAIL",
+    "error": "summary 404"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Makuhari Messe",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Makuhari Messe</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q862452",
+  "titles": {
+    "canonical": "Makuhari_Messe",
+    "normalized": "Makuhari Messe",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Makuhari Messe</span></span>"
+  },
+  "pageid": 1861019,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Makuhari_Messe%2C_North_hall_2.jpg/330px-Makuhari_Messe%2C_North_hall_2.jpg",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Makuhari_Messe%2C_North_hall_2.jpg/3840px-Makuhari_Messe%2C_North_hall_2.jpg",
+    "width": 4608,
+    "height": 2592
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1352745844",
+  "tid": "e4e52dd5-48e9-11f1-8f72-55a9110d5ae6",
+  "timestamp": "2026-05-06T01:21:23Z",
+  "description": "Japanese convention center in the Mihama-ku of Chiba city",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.64833,
+    "lon": 140.03472
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Makuhari_Messe",
+      "revisions": "https://en.wikipedia.org/wiki/Makuhari_Messe?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Makuhari_Messe?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Makuhari_Messe"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Makuhari_Messe",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Makuhari_Messe",
+      "edit": "https://en.wikipedia.org/wiki/Makuhari_Messe?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Makuhari_Messe"
+    }
+  },
+  "extract": "Makuhari Messe (幕張メッセ) is a convention center in Chiba City, Chiba Prefecture, Japan, located just outside of Tokyo. Designed by Fumihiko Maki, it is accessible by Tokyo's commuter rail system. Makuhari is the name of the area, and Messe is a German language word meaning \"trade fair\".",
+  "extract_html": "<p><b>Makuhari Messe</b><span style=\"font-weight:normal\"> (幕張メッセ)</span> is a convention center in Chiba City, Chiba Prefecture, Japan, located just outside of Tokyo. Designed by Fumihiko Maki, it is accessible by Tokyo's commuter rail system. <i>Makuhari</i> is the name of the area, and <span class=\"extiw\">Messe</span> is a German language word meaning \"trade fair\".</p>"
+}

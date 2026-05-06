@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Architect Genealogy — Japan</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  body { margin: 0; font-family: -apple-system, "Hiragino Sans", "Songti SC", sans-serif; background: #fafaf7; color: #222; }
+  header { padding: 12px 24px 10px; border-bottom: 1px solid #e5e5e0; }
+  h1 { margin: 0 0 2px; font-size: 16px; font-weight: 500; letter-spacing: 0.02em; }
+  .subtitle { font-size: 11px; color: #888; }
+  #toolbar { padding: 7px 24px; border-bottom: 1px solid #f0f0eb; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; background: #fff; }
+  .filter-btn { background: #f5f4ef; border: 1px solid #d8d8d2; padding: 4px 10px; font-size: 11px; cursor: pointer; color: #444; transition: all 0.15s; font-family: inherit; }
+  .filter-btn:hover { background: #ebeae3; }
+  .filter-btn.active { background: #2c3e50; color: #fff; border-color: #2c3e50; }
+  .filter-divider { width: 1px; height: 18px; background: #d8d8d2; margin: 0 4px; }
+  .legend-inline { font-size: 10.5px; color: #888; margin-left: auto; display: flex; gap: 12px; align-items: center; }
+  .swatch { display: inline-block; width: 9px; height: 9px; margin-right: 4px; vertical-align: middle; }
+
+  #observations { padding: 8px 24px 10px; border-bottom: 1px solid #f0f0eb; background: #f7f5ee; display: flex; gap: 8px; flex-wrap: wrap; }
+  .obs-card { flex: 1; min-width: 200px; padding: 8px 12px; background: #fff; border: 1px solid #e5e5e0; cursor: pointer; transition: all 0.15s; }
+  .obs-card:hover { border-color: #c89a3c; background: #fffaf0; }
+  .obs-card.active { background: #2c3e50; border-color: #2c3e50; }
+  .obs-card.active .obs-title { color: #fff; }
+  .obs-card.active .obs-desc, .obs-card.active .obs-detail, .obs-card.active .obs-period { color: #b8c8d8; }
+  .obs-period { font-size: 9px; color: #c89a3c; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .obs-title { font-size: 12.5px; font-weight: 500; color: #222; margin: 1px 0 2px; }
+  .obs-desc { font-size: 11px; color: #555; line-height: 1.35; }
+  .obs-detail { font-size: 10px; color: #888; margin-top: 3px; }
+
+  .obs-band { fill-opacity: 0.18; pointer-events: none; }
+  .obs-band-label { font-size: 10px; fill: #c89a3c; font-weight: 500; pointer-events: none; }
+  .obs-marker-line { stroke: #c89a3c; stroke-width: 2; stroke-dasharray: 5,3; pointer-events: none; }
+  .pritzker-path { stroke: #c89a3c; stroke-width: 2.5; fill: none; stroke-opacity: 0.7; pointer-events: none; }
+  .pritzker-year-label { font-size: 9px; fill: #8a6b25; font-weight: 600; pointer-events: none; }
+
+  #panes { display: flex; flex-direction: column; height: calc(100vh - 180px); }
+  #timeline-pane { flex: 1; border-bottom: 1px solid #e5e5e0; position: relative; overflow: hidden; min-height: 380px; }
+  #map-pane { flex: 1; position: relative; min-height: 280px; }
+  #timeline-svg { display: block; width: 100%; height: 100%; cursor: grab; background: #fafaf7; }
+  #timeline-svg:active { cursor: grabbing; }
+  #map { width: 100%; height: 100%; background: #f0efea; }
+  .pane-title { position: absolute; top: 8px; left: 12px; font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; pointer-events: none; z-index: 500; background: rgba(250,250,247,0.9); padding: 2px 7px; }
+  .pane-stats { position: absolute; top: 8px; right: 12px; font-size: 10px; color: #888; pointer-events: none; z-index: 500; background: rgba(250,250,247,0.9); padding: 2px 7px; }
+
+  .grid-line { stroke: #e8e6e0; stroke-width: 1; }
+  .grid-line.major { stroke: #d0cdc4; }
+  .axis-label { font-size: 10px; fill: #999; }
+  .lineage-label { font-size: 11px; fill: #555; font-weight: 500; }
+  .lineage-band { fill: #fafaf7; }
+  .lineage-band.alt { fill: #f5f3ec; }
+
+  .link { fill: none; stroke-opacity: 0.45; transition: opacity 0.2s; }
+  .link.worked_at { stroke: #555; stroke-width: 1.3; }
+  .link.studied_under { stroke: #c89a3c; stroke-width: 1.3; stroke-dasharray: 4,3; }
+  .node circle { stroke: #fff; stroke-width: 1.5; cursor: pointer; transition: all 0.2s; }
+  .node text.label { font-size: 10px; pointer-events: none; fill: #222; font-weight: 500; transition: opacity 0.2s; }
+  .node text.years { font-size: 8.5px; pointer-events: none; fill: #888; transition: opacity 0.2s; }
+  .node.external circle { fill: #ccc; stroke-dasharray: 2,2; }
+  .node.external text.label { fill: #888; font-style: italic; }
+  .node.pritzker circle { stroke: #c89a3c; stroke-width: 2.5; }
+  .node.highlight circle { stroke: #8a6b25; stroke-width: 3.5; }
+  .node.dim, .link.dim, .marker-arch.dim { opacity: 0.1; }
+  .node.dim text { opacity: 0.3; }
+
+  #info { position: fixed; right: 14px; bottom: 14px; width: 300px; padding: 14px 16px; background: #fff; border: 1px solid #d8d8d2; box-shadow: 0 8px 24px rgba(0,0,0,0.08); font-size: 12px; line-height: 1.55; display: none; z-index: 1000; max-height: 70vh; overflow-y: auto; }
+  #info h3 { margin: 0 0 6px; font-size: 14px; }
+  #info dt { color: #888; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 6px; }
+  #info dd { margin: 1px 0 0; }
+  #info button.close { position: absolute; top: 8px; right: 10px; border: none; background: none; cursor: pointer; color: #aaa; font-size: 16px; }
+  .work-item { padding: 4px 0; border-top: 1px solid #f0efea; }
+  .work-item:first-of-type { border-top: none; }
+  .marker-label { background: #fff; border: 1px solid #888; padding: 1px 5px; font-size: 10px; white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+  #lang-switch { display: flex; gap: 2px; }
+  .lang-btn { background: transparent; border: 1px solid #d8d8d2; padding: 3px 9px; font-size: 10px; cursor: pointer; color: #888; font-family: inherit; letter-spacing: 0.04em; }
+  .lang-btn.active { background: #2c3e50; color: #fff; border-color: #2c3e50; }
+  .lang-btn:hover:not(.active) { background: #f0eee6; }
+
+  .info-thumb { width: 100%; max-height: 220px; object-fit: cover; object-position: top center; margin-bottom: 8px; border: 1px solid #e0ddd5; background: #f5f3ec; }
+  .info-thumb.work { object-position: center center; max-height: 180px; }
+  .info-extract { font-size: 11px; color: #666; line-height: 1.45; margin: 6px 0 8px; padding-bottom: 8px; border-bottom: 1px solid #f0efea; font-style: italic; }
+  #top-hubs { position: absolute; top: 8px; right: 14px; z-index: 600; background: rgba(255,255,255,0.92); border: 1px solid #e0ddd5; padding: 6px 10px 7px; font-size: 10.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  #top-hubs .hub-title { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+  #top-hubs .hub-row { display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 2px 0; }
+  #top-hubs .hub-row:hover { background: #fafaf7; }
+  #top-hubs .hub-rank { font-size: 9px; color: #aaa; width: 14px; }
+  #top-hubs .hub-degree { color: #c89a3c; font-weight: 600; font-size: 10px; margin-left: auto; }
+
+  #map-toggle { position: absolute; top: 8px; left: 110px; z-index: 600; background: rgba(255,255,255,0.92); border: 1px solid #e0ddd5; padding: 2px; display: flex; gap: 1px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  #map-toggle button { background: transparent; border: none; padding: 3px 8px; font-size: 10px; cursor: pointer; color: #666; font-family: inherit; letter-spacing: 0.04em; }
+  #map-toggle button.active { background: #2c3e50; color: #fff; }
+
+  /* ── Mobile responsive ── */
+  @media (max-width: 768px) {
+    header { padding: 10px 14px 8px; }
+    h1 { font-size: 15px; }
+    .subtitle { font-size: 10px; line-height: 1.4; }
+    #toolbar { padding: 6px 10px; gap: 4px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    #toolbar .legend-inline { display: none; }
+    .filter-btn { padding: 5px 9px; font-size: 10.5px; flex: none; white-space: nowrap; }
+    #observations { padding: 8px 10px; gap: 6px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+    .obs-card { flex: 0 0 70%; min-width: 220px; max-width: 280px; padding: 8px 10px; }
+    .obs-title { font-size: 12px; }
+    .obs-desc { font-size: 10.5px; }
+    .obs-detail { font-size: 9.5px; }
+    #panes { height: calc(100vh - 220px); }
+    #timeline-pane { min-height: 300px; overflow-x: auto; }
+    #timeline-svg { min-width: 900px; }
+    #map-pane { min-height: 240px; }
+    #top-hubs { font-size: 9.5px; padding: 4px 8px; max-width: 130px; }
+    #top-hubs .hub-row { font-size: 10px; }
+    #info { right: 8px; left: 8px; bottom: 8px; width: auto; max-height: 50vh; padding: 12px; }
+    .info-thumb { max-height: 200px; }
+    .info-thumb.work { max-height: 160px; }
+    #lang-switch { transform: scale(0.95); transform-origin: right center; }
+  }
+  @media (max-width: 480px) {
+    .obs-card { flex: 0 0 80%; }
+    #timeline-svg { min-width: 800px; }
+  }
+</style>
+</head>
+<body>
+<header style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px;">
+  <div>
+    <h1 id="page-title">Architect Genealogy — Japan</h1>
+    <div class="subtitle"><span id="header-stats">…</span> <span id="subtitle-suffix"></span></div>
+  </div>
+  <div id="lang-switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+  </div>
+</header>
+
+<div id="toolbar">
+  <span id="lineage-label" style="font-size:10.5px; color:#888; text-transform:uppercase; letter-spacing:0.08em;">Lineage:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="tange">丹下系</button>
+  <button class="filter-btn" data-filter="shinohara">篠原+菊竹+伊東系</button>
+  <button class="filter-btn" data-filter="hara">原系</button>
+  <button class="filter-btn" data-filter="ban">Hejduk→坂</button>
+  <button class="filter-btn" data-filter="aoki">青木→永山</button>
+  <button class="filter-btn" data-filter="fujimori">藤森→Bow-Wow</button>
+  <button class="filter-btn" data-filter="kuma">隈→中村</button>
+  <button class="filter-btn" data-filter="ando">安藤→千葉</button>
+  <button class="filter-btn" data-filter="independent">独立</button>
+  <span class="filter-divider"></span>
+  <button class="filter-btn" data-filter="pritzker">⭐ Pritzker only</button>
+  <span class="legend-inline">
+    <span class="legend-item" data-key="worked"><span class="swatch" style="background:#222;"></span><span class="legend-text">worked_at</span></span>
+    <span class="legend-item" data-key="studied"><span class="swatch" style="background:#c89a3c;"></span><span class="legend-text">studied_under</span></span>
+    <span class="legend-item" data-key="pritzker"><span class="swatch" style="border:2px solid #c89a3c; background:#fff; border-radius:50%; width:7px; height:7px;"></span><span class="legend-text">Pritzker</span></span>
+  </span>
+</div>
+
+<div id="observations"></div>
+
+<div id="panes">
+  <div id="timeline-pane">
+    <div class="pane-title" id="pane-title-timeline">Genealogy Timeline</div>
+    <div class="pane-stats" id="timeline-stats"></div>
+    <div id="top-hubs"></div>
+    <svg id="timeline-svg"></svg>
+  </div>
+  <div id="map-pane">
+    <div class="pane-title" id="pane-title-map">Notable Works Map</div>
+    <div id="map-toggle">
+      <button data-mapview="all" class="active">All</button>
+      <button data-mapview="japan">日本</button>
+      <button data-mapview="overseas">海外</button>
+    </div>
+    <div class="pane-stats" id="map-stats"></div>
+    <div id="map"></div>
+  </div>
+</div>
+
+<div id="info"><button class="close" onclick="hideInfo()">×</button><div id="info-body"></div></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="works.js"></script>
+<script src="thumbs.js"></script>
+<script src="i18n.js"></script>
+<script>
+const data = window.GENEALOGY;
+const works = window.WORKS;
+
+// ── i18n ──
+let currentLang = 'en';  // default
+const t = () => window.I18N[currentLang];
+const labelOf = (n) => {
+  // External mentors get translated names; Japanese architects keep CJK label
+  if (n.external && window.MENTOR_NAMES[n.id]) return window.MENTOR_NAMES[n.id][currentLang];
+  if (currentLang === 'en') return n.labelEn || n.label;
+  return n.label;
+};
+
+// Lineage groupings (manual, for stable order)
+const LINEAGE_ORDER = ['tange', 'shinohara', 'hara', 'aoki', 'ban', 'fujimori', 'kuma', 'ando', 'independent'];
+const LINEAGE_LABELS = {
+  tange:       '丹下系',
+  shinohara:   '篠原+菊竹+伊東系',
+  hara:        '原広司系',
+  aoki:        '青木系',
+  ban:         'Hejduk→坂',
+  fujimori:    '藤森→Bow-Wow',
+  kuma:        '隈→中村',
+  ando:        '安藤→千葉',
+  independent: '独立',
+};
+const lineageRoots = {
+  tange:     ['corbusier','raymond','gropius','maekawa','sakakura','yoshimura','tange','maki','isozaki','kurokawa','taniguchi','taniguchi_y'],
+  shinohara: ['shinohara','kikutake','ito','sejima','nishizawa','nishizawa_t','hirata','ishigami','hasegawa','naito','tane','go_hasegawa'],
+  hara:      ['hara','yamamoto'],
+  ban:       ['hejduk','ban'],
+  aoki:      ['aoki','inui','nagayama'],
+  fujimori:  ['fujimori','bowwow'],
+  kuma:      ['kuma','nakamura'],
+  ando:      ['ando','chiba'],
+  independent: ['fujimoto','murano','tanijiri','tezuka','shimada']
+};
+const nodeLineage = {};
+Object.entries(lineageRoots).forEach(([key, ids]) => ids.forEach(id => nodeLineage[id] = key));
+
+const LINEAGE_COLOR = {
+  tange:       '#c0392b',
+  shinohara:   '#2980b9',
+  hara:        '#27ae60',
+  ban:         '#8e44ad',
+  aoki:        '#d35400',
+  fujimori:    '#16a085',
+  kuma:        '#5d6d7e',
+  ando:        '#7f5217',
+  independent: '#95a5a6',
+};
+const colorOf = id => LINEAGE_COLOR[nodeLineage[id]] || '#999';
+
+// ── Network centrality (J6) ──
+const degree = {};
+data.nodes.forEach(n => degree[n.id] = 0);
+data.edges.forEach(e => {
+  const sId = e.source.id || e.source, tId = e.target.id || e.target;
+  degree[sId] = (degree[sId] || 0) + 1;
+  degree[tId] = (degree[tId] || 0) + 1;
+});
+const maxDegree = Math.max(...Object.values(degree));
+const radiusOf = d => {
+  const base = d.external ? 4 : 7;
+  const bonus = (degree[d.id] || 0) * 1.6;
+  return Math.min(base + bonus, 18);
+};
+
+// Top hubs panel
+const topHubs = data.nodes
+  .filter(n => !n.external)
+  .map(n => ({ ...n, degree: degree[n.id] || 0 }))
+  .sort((a, b) => b.degree - a.degree)
+  .slice(0, 5);
+const hubsHtml = `<div class="hub-title">Top 5 Hubs (degree)</div>` +
+  topHubs.map((n, i) => `
+    <div class="hub-row" data-hub-id="${n.id}">
+      <span class="hub-rank">${i + 1}</span>
+      <span style="color:${colorOf(n.id)};">●</span>
+      <span>${n.label}</span>
+      <span class="hub-degree">${n.degree}</span>
+    </div>`).join('');
+document.getElementById('top-hubs').innerHTML = hubsHtml;
+
+// ── Apply language to all UI ──
+function applyLanguage() {
+  const T = t();
+  document.documentElement.lang = T.htmlLang;
+  document.getElementById('page-title').textContent = T.title;
+  document.getElementById('subtitle-suffix').textContent = T.subtitleSuffix;
+  document.getElementById('header-stats').textContent =
+    `${data.nodes.length} ${T.statsNodes} · ${data.edges.length} ${T.statsEdges} · ${works.length} ${T.statsWorks}`;
+  document.getElementById('timeline-stats').textContent = `${data.nodes.length} ${T.statsChrono}`;
+  document.getElementById('map-stats').textContent = `${works.length} ${T.statsWorks}`;
+  document.getElementById('pane-title-timeline').textContent = T.paneTimeline;
+  document.getElementById('pane-title-map').textContent = T.paneMap;
+  document.getElementById('lineage-label').textContent = T.lineageLabel;
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const f = btn.dataset.filter;
+    if (f === 'all') btn.textContent = T.filter.all;
+    else if (f === 'pritzker') btn.textContent = T.filter.pritzker;
+    else if (T.lineage[f]) btn.textContent = T.lineage[f];
+  });
+
+  // Legend (only update text, leave swatch untouched)
+  document.querySelectorAll('.legend-item').forEach(el => {
+    const key = el.dataset.key;
+    const txt = el.querySelector('.legend-text');
+    if (txt && T.legend[key]) txt.textContent = T.legend[key];
+  });
+
+  // Observation cards (render from i18n)
+  const obsContainer = document.getElementById('observations');
+  obsContainer.innerHTML = Object.entries(T.obs).map(([id, o]) => `
+    <div class="obs-card" data-obs="${id}">
+      <div class="obs-period">${o.p}</div>
+      <div class="obs-title">${o.t}</div>
+      <div class="obs-desc">${o.d}</div>
+      <div class="obs-detail">${o.x}</div>
+    </div>
+  `).join('');
+  // re-bind obs card clicks
+  bindObsCards();
+
+  // Node labels in timeline
+  d3.selectAll('.node text.label').text(d => labelOf(d));
+
+  // Map tooltips
+  markers.forEach(m => {
+    const arch = data.nodes.find(n => n.id === m._archId);
+    m.setTooltipContent(`<strong>${arch ? labelOf(arch) : m._archId}</strong><br>${m._work.name}`);
+  });
+
+  // Re-draw Pritzker path if active (for age suffix change)
+  if (activeFilter === 'pritzker') drawPritzkerPath();
+  if (activeObs && OBSERVATIONS[activeObs]?.drawPritzkerPath) drawPritzkerPath();
+
+  // Top hubs
+  const T2 = t();
+  document.getElementById('top-hubs').innerHTML =
+    `<div class="hub-title">${T2.topHubs}</div>` +
+    topHubs.map((n, i) => `
+      <div class="hub-row" data-hub-id="${n.id}">
+        <span class="hub-rank">${i + 1}</span>
+        <span style="color:${colorOf(n.id)};">●</span>
+        <span>${labelOf(n)}</span>
+        <span class="hub-degree">${n.degree}</span>
+      </div>`).join('');
+  document.querySelectorAll('#top-hubs .hub-row').forEach(row => {
+    row.onclick = () => {
+      const d = data.nodes.find(n => n.id === row.dataset.hubId);
+      if (d) showArchitect(d);
+    };
+  });
+}
+
+// Language switcher buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentLang = btn.dataset.lang;
+    applyLanguage();
+  };
+});
+
+// effective birth year (use founded - 30 for groups like Bow-Wow)
+const birthYear = n => n.born || (n.founded ? n.founded - 30 : 1965);
+
+// ── Timeline layout ──
+const tlPane = document.getElementById('timeline-pane');
+const TW = tlPane.clientWidth;
+const TH = tlPane.clientHeight;
+const MARGIN = { top: 36, right: 30, bottom: 30, left: 130 };
+const innerW = TW - MARGIN.left - MARGIN.right;
+const innerH = TH - MARGIN.top - MARGIN.bottom;
+
+const X_DOMAIN = [1880, 1985];
+const xScale = d3.scaleLinear().domain(X_DOMAIN).range([0, innerW]);
+const bandH = innerH / LINEAGE_ORDER.length;
+const bandY = lin => LINEAGE_ORDER.indexOf(lin) * bandH + bandH/2;
+
+const tlSvg = d3.select('#timeline-svg').attr('viewBox', `0 0 ${TW} ${TH}`);
+const tlG = tlSvg.append('g').attr('transform', `translate(${MARGIN.left},${MARGIN.top})`);
+
+// Background bands (alternating)
+LINEAGE_ORDER.forEach((lin, i) => {
+  tlG.append('rect')
+    .attr('class', 'lineage-band' + (i % 2 ? ' alt' : ''))
+    .attr('x', -MARGIN.left + 10).attr('y', i * bandH)
+    .attr('width', innerW + MARGIN.left + MARGIN.right - 20).attr('height', bandH);
+  tlG.append('text')
+    .attr('class', 'lineage-label')
+    .attr('x', -MARGIN.left + 18).attr('y', i * bandH + bandH/2 + 4)
+    .style('fill', LINEAGE_COLOR[lin])
+    .text(LINEAGE_LABELS[lin]);
+});
+
+// Decade gridlines
+for (let yr = 1880; yr <= 1985; yr += 10) {
+  const major = (yr % 20 === 0);
+  tlG.append('line')
+    .attr('class', 'grid-line' + (major ? ' major' : ''))
+    .attr('x1', xScale(yr)).attr('x2', xScale(yr))
+    .attr('y1', 0).attr('y2', innerH);
+  if (major) {
+    tlG.append('text')
+      .attr('class', 'axis-label')
+      .attr('x', xScale(yr)).attr('y', -10)
+      .attr('text-anchor', 'middle')
+      .text(yr);
+  }
+}
+
+// Compute node positions (X locked, Y forced)
+data.nodes.forEach(n => {
+  n.x = xScale(birthYear(n));
+  n.y = bandY(nodeLineage[n.id]);
+});
+
+// Run a y-only force to spread nodes within bands
+const sim = d3.forceSimulation(data.nodes)
+  .force('x', d3.forceX(d => xScale(birthYear(d))).strength(1))
+  .force('y', d3.forceY(d => bandY(nodeLineage[d.id])).strength(0.6))
+  .force('collide', d3.forceCollide(20))
+  .stop();
+for (let i = 0; i < 250; i++) sim.tick();
+
+// Draw edges
+const link = tlG.append('g').selectAll('path')
+  .data(data.edges).join('path')
+  .attr('class', d => `link ${d.type}`)
+  .attr('d', d => {
+    const s = data.nodes.find(n => n.id === (d.source.id || d.source));
+    const t = data.nodes.find(n => n.id === (d.target.id || d.target));
+    if (!s || !t) return '';
+    const dx = t.x - s.x, dy = t.y - s.y;
+    const dr = Math.sqrt(dx*dx + dy*dy) * 1.6;
+    return `M${s.x},${s.y}A${dr},${dr} 0 0,1 ${t.x - 4},${t.y}`;
+  });
+
+// Draw nodes
+const node = tlG.append('g').selectAll('g')
+  .data(data.nodes).join('g')
+  .attr('class', d => `node ${d.external ? 'external' : ''} ${d.pritzker ? 'pritzker' : ''}`)
+  .attr('data-id', d => d.id)
+  .attr('transform', d => `translate(${d.x},${d.y})`);
+
+node.append('circle')
+  .attr('r', radiusOf)
+  .attr('fill', d => d.external ? '#ccc' : colorOf(d.id));
+
+node.append('text')
+  .attr('class', 'label')
+  .attr('x', 11).attr('y', -3)
+  .text(d => d.label);
+
+node.append('text')
+  .attr('class', 'years')
+  .attr('x', 11).attr('y', 8)
+  .text(d => {
+    if (d.born && d.died) return `${d.born}–${d.died}`;
+    if (d.born) return `${d.born}–`;
+    if (d.founded) return `f.${d.founded}`;
+    return '';
+  });
+
+node.on('click', (e, d) => showArchitect(d));
+
+// ── Map ──
+const map = L.map('map', { zoomControl: true }).setView([36.0, 138.0], 5);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OSM © CARTO', maxZoom: 18
+}).addTo(map);
+
+const markers = [];
+works.forEach(w => {
+  const arch = data.nodes.find(n => n.id === w.archId);
+  const m = L.circleMarker([w.lat, w.lng], {
+    radius: 7,
+    color: colorOf(w.archId),
+    weight: 2,
+    fillColor: colorOf(w.archId),
+    fillOpacity: 0.7,
+    className: `marker-arch arch-${w.archId} lin-${nodeLineage[w.archId]}`
+  }).addTo(map);
+  m.bindTooltip(`<strong>${arch?.label || w.archId}</strong><br>${w.name}`, { direction: 'top', offset: [0, -8], className: 'marker-label' });
+  m.on('click', () => { if (arch) showArchitect(arch, w); });
+  m._archId = w.archId;
+  m._work = w;
+  markers.push(m);
+});
+
+// ── Map view toggle ──
+const JAPAN_BBOX = [[24, 122], [46, 146]];
+let activeMapView = 'all';
+function applyMapView() {
+  markers.forEach(m => {
+    const isJp = !m._work.overseas;
+    let visible = true;
+    if (activeMapView === 'japan') visible = isJp;
+    else if (activeMapView === 'overseas') visible = !isJp;
+    const el = m.getElement();
+    if (el) el.style.display = visible ? '' : 'none';
+  });
+  if (activeMapView === 'japan') {
+    map.flyToBounds(JAPAN_BBOX, { padding: [30, 30], duration: 0.6 });
+  } else if (activeMapView === 'overseas') {
+    const overseas = works.filter(w => w.overseas);
+    if (overseas.length) map.flyToBounds(L.latLngBounds(overseas.map(w => [w.lat, w.lng])), { padding: [40, 40], duration: 0.6 });
+  } else {
+    map.flyToBounds(L.latLngBounds(works.map(w => [w.lat, w.lng])), { padding: [30, 30], duration: 0.6 });
+  }
+}
+document.querySelectorAll('#map-toggle button').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('#map-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeMapView = btn.dataset.mapview;
+    applyMapView();
+  };
+});
+
+// ── Filter ──
+let activeFilter = 'all';
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    // clear any active observation card
+    document.querySelectorAll('.obs-card').forEach(c => c.classList.remove('active'));
+    activeObs = null;
+    clearAnnotations();
+    applyFilter();
+    hideInfo();
+  };
+});
+
+function nodePassesFilter(d) {
+  if (activeFilter === 'all') return true;
+  if (activeFilter === 'pritzker') return !!d.pritzker;
+  return nodeLineage[d.id] === activeFilter;
+}
+
+function applyFilter() {
+  // Pritzker chronology path: only when pritzker filter active
+  if (activeFilter === 'pritzker') drawPritzkerPath();
+  else clearPritzkerPath();
+
+  document.querySelectorAll('.node').forEach(el => {
+    const d = data.nodes.find(n => n.id === el.dataset.id);
+    el.classList.toggle('dim', !nodePassesFilter(d));
+  });
+  document.querySelectorAll('.link').forEach((el, i) => {
+    const e = data.edges[i];
+    const sId = e.source.id || e.source, tId = e.target.id || e.target;
+    el.classList.toggle('dim',
+      !nodePassesFilter(data.nodes.find(n => n.id === sId)) ||
+      !nodePassesFilter(data.nodes.find(n => n.id === tId)));
+  });
+  markers.forEach(m => {
+    const arch = data.nodes.find(n => n.id === m._archId);
+    const el = m.getElement();
+    if (el) el.classList.toggle('dim', !nodePassesFilter(arch));
+  });
+  const visN = data.nodes.filter(nodePassesFilter).length;
+  const visW = works.filter(w => nodePassesFilter(data.nodes.find(n => n.id === w.archId))).length;
+  document.getElementById('timeline-stats').textContent =
+    activeFilter === 'all' ? `${data.nodes.length} architects` : `${visN} / ${data.nodes.length}`;
+  document.getElementById('map-stats').textContent =
+    activeFilter === 'all' ? `${works.length} works` : `${visW} / ${works.length}`;
+}
+
+// ── Click handler ──
+function showArchitect(d, focusWork) {
+  document.querySelectorAll('.node').forEach(el => el.classList.remove('highlight'));
+  const el = document.querySelector(`.node[data-id="${d.id}"]`);
+  if (el) el.classList.add('highlight');
+
+  const archWorks = works.filter(w => w.archId === d.id);
+  if (focusWork) {
+    map.flyTo([focusWork.lat, focusWork.lng], 14, { duration: 0.8 });
+  } else if (archWorks.length === 1) {
+    map.flyTo([archWorks[0].lat, archWorks[0].lng], 11, { duration: 0.8 });
+  } else if (archWorks.length > 1) {
+    const bounds = L.latLngBounds(archWorks.map(w => [w.lat, w.lng]));
+    map.flyToBounds(bounds, { padding: [60, 60], duration: 0.8, maxZoom: 9 });
+  }
+
+  const T = t();
+  const incoming = data.edges.filter(x => (x.target.id || x.target) === d.id);
+  const outgoing = data.edges.filter(x => (x.source.id || x.source) === d.id);
+  const findLabel = id => labelOf(data.nodes.find(n => n.id === id) || { id, label: id });
+  const archWorksHtml = archWorks.length
+    ? `<dt>${T.info.works} (${archWorks.length})</dt><dd>${archWorks.map(w => `<div class="work-item"><strong>${w.nameJa || w.name}</strong><br><span style="color:#888;">${w.lat.toFixed(2)}, ${w.lng.toFixed(2)}</span></div>`).join('')}</dd>`
+    : `<dt>${T.info.works}</dt><dd style="color:#aaa;">${T.info.noWorks}</dd>`;
+  const thumb = window.THUMBS && window.THUMBS[d.id];
+  const extractObj = window.EXTRACTS && window.EXTRACTS[d.id];
+  // Show extract only when its source language matches UI language.
+  // Exception: 'en' extract shown in ZH UI too (most ZH readers can read EN).
+  const extract = extractObj && (
+    extractObj.lang === currentLang ||
+    (extractObj.lang === 'en' && currentLang === 'zh')
+  ) ? extractObj.text : null;
+  const focusedWork = focusWork || archWorks[0];
+  const workThumb = focusedWork?.thumb;
+  const lineageText = (T.lineage[nodeLineage[d.id]] || '');
+  document.getElementById('info-body').innerHTML = `
+    ${thumb ? `<img class="info-thumb" src="${thumb}" alt="${labelOf(d)}">` : ''}
+    <h3>${labelOf(d)} <span style="color:#888; font-weight:normal;">${currentLang !== 'en' ? (d.labelEn || '') : ''}</span></h3>
+    <div style="font-size:10px; color:${colorOf(d.id)}; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">${lineageText} · ${T.info.degree} ${degree[d.id] || 0}</div>
+    ${extract ? `<div class="info-extract">${extract}…</div>` : ''}
+    <dl style="margin:0;">
+      ${d.born ? `<dt>${T.info.born}</dt><dd>${d.born}${d.died ? '–' + d.died : '–'}</dd>` : ''}
+      ${d.founded ? `<dt>${T.info.founded}</dt><dd>${d.founded}</dd>` : ''}
+      ${d.school ? `<dt>${T.info.school}</dt><dd>${d.school}</dd>` : ''}
+      ${d.pritzker ? `<dt>${T.info.pritzker}</dt><dd>${d.pritzker}</dd>` : ''}
+      ${incoming.length ? `<dt>${T.info.mentor}</dt><dd>${incoming.map(e2 => `← ${findLabel(e2.source.id || e2.source)}`).join('<br>')}</dd>` : ''}
+      ${outgoing.length ? `<dt>${T.info.students}</dt><dd>${outgoing.map(e2 => `→ ${findLabel(e2.target.id || e2.target)}`).join('<br>')}</dd>` : ''}
+      ${workThumb ? `<dt>${T.info.workImage}</dt><dd><img class="info-thumb work" src="${workThumb}" alt="${focusedWork.name}" style="margin-top:4px;"></dd>` : ''}
+      ${archWorksHtml}
+      ${d.note ? `<dt>${T.info.note}</dt><dd>${d.note}</dd>` : ''}
+    </dl>`;
+  document.getElementById('info').style.display = 'block';
+}
+
+function hideInfo() {
+  document.getElementById('info').style.display = 'none';
+  document.querySelectorAll('.node').forEach(el => el.classList.remove('highlight'));
+}
+
+// Top hubs click → show that architect
+document.querySelectorAll('#top-hubs .hub-row').forEach(row => {
+  row.onclick = () => {
+    const d = data.nodes.find(n => n.id === row.dataset.hubId);
+    if (d) showArchitect(d);
+  };
+});
+
+// ── Historical Observations ──
+const OBSERVATIONS = {
+  '1941': {
+    nodeIds: ['ito', 'ando', 'hasegawa'],
+    annotation: { type: 'line', year: 1941, label: '1941 cohort' }
+  },
+  '1925-1934': {
+    nodeIds: ['shinohara', 'kikutake', 'maki', 'isozaki', 'kurokawa'],
+    annotation: { type: 'band', from: 1925, to: 1934, label: '1925-1934 大师集中' }
+  },
+  'foreign-gap': {
+    nodeIds: ['corbusier', 'raymond', 'gropius', 'maekawa', 'sakakura', 'tange'],
+    annotation: { type: 'band', from: 1880, to: 1915, label: '海外 vs 日本本土' }
+  },
+  'utokyo': {
+    // U Tokyo lineage (graduated or studied as professor/post-grad)
+    nodeIds: ['maekawa','sakakura','tange','maki','isozaki','kurokawa','hara','ito','yamamoto','kuma','fujimoto','fujimori','taniguchi_y'],
+    annotation: { type: 'label', label: '東京大学系（13 节点）' }
+  },
+  'women': {
+    nodeIds: ['hasegawa','sejima','inui','nagayama'],
+    annotation: { type: 'label', label: '女性建筑师 timeline (4 人)' }
+  },
+  'metabolism': {
+    nodeIds: ['tange','kikutake','kurokawa','maki','isozaki'],
+    annotation: { type: 'label', label: 'Metabolism 派 1960' }
+  },
+  'corbusier-chain': {
+    nodeIds: ['corbusier','maekawa','sakakura','tange','maki','isozaki','kurokawa','taniguchi'],
+    annotation: { type: 'label', label: 'Le Corbusier 影响链 3 世代' }
+  },
+  'overseas': {
+    nodeIds: ['maekawa','sakakura','yoshimura','maki','taniguchi','ban','kuma','fujimoto'],
+    annotation: { type: 'label', label: '海外修业 → 帰国 8 人' }
+  },
+  'pritzker-age': {
+    nodeIds: ['tange','maki','ando','sejima','nishizawa','ito','ban','isozaki','yamamoto'],
+    annotation: { type: 'label', label: 'Pritzker 受賞年齢: 44 (西沢) → 88 (磯崎)' },
+    drawPritzkerPath: true
+  },
+  'waseda': {
+    nodeIds: ['murano','kikutake','naito'],
+    annotation: { type: 'label', label: '早稲田大学派（独立系統 3 人）' }
+  },
+  'tokyotech': {
+    nodeIds: ['shinohara','hasegawa','bowwow'],
+    annotation: { type: 'label', label: '東京工業大学派（篠原研究室 + Bow-Wow）' }
+  },
+  'overseas-works': {
+    nodeIds: [...new Set(works.filter(w => w.overseas).map(w => w.archId))],
+    annotation: { type: 'label', label: '海外進出組（14 件作品）' },
+    mapView: 'overseas'
+  }
+};
+
+// ── Pritzker chronology path (drawn when "pritzker" filter active) ──
+const pritzkerSorted = data.nodes.filter(n => n.pritzker).sort((a,b) => a.pritzker - b.pritzker);
+const pritzkerLayer = tlG.append('g').attr('class', 'pritzker-layer');
+
+function drawPritzkerPath() {
+  pritzkerLayer.selectAll('*').remove();
+  if (pritzkerSorted.length < 2) return;
+  // Path connecting winners in winning-year order
+  const pathD = pritzkerSorted.map((n, i) =>
+    `${i === 0 ? 'M' : 'L'}${n.x},${n.y}`
+  ).join(' ');
+  pritzkerLayer.append('path')
+    .attr('class', 'pritzker-path')
+    .attr('d', pathD);
+  // Year labels
+  pritzkerSorted.forEach(n => {
+    const age = n.pritzker - n.born;
+    pritzkerLayer.append('text')
+      .attr('class', 'pritzker-year-label')
+      .attr('x', n.x).attr('y', n.y - 14)
+      .attr('text-anchor', 'middle')
+      .text(`${n.pritzker} (${age}${t().info.ageSuffix})`);
+  });
+}
+
+function clearPritzkerPath() {
+  pritzkerLayer.selectAll('*').remove();
+}
+
+let activeObs = null;
+const annoLayer = tlG.append('g').attr('class', 'annotation-layer').lower();
+
+function clearAnnotations() {
+  annoLayer.selectAll('*').remove();
+}
+
+function drawAnnotation(anno) {
+  if (anno.type === 'band') {
+    annoLayer.append('rect')
+      .attr('class', 'obs-band')
+      .attr('x', xScale(anno.from)).attr('y', 0)
+      .attr('width', xScale(anno.to) - xScale(anno.from))
+      .attr('height', innerH)
+      .attr('fill', '#c89a3c');
+    annoLayer.append('text')
+      .attr('class', 'obs-band-label')
+      .attr('x', (xScale(anno.from) + xScale(anno.to))/2)
+      .attr('y', -22)
+      .attr('text-anchor', 'middle')
+      .text(anno.label);
+  } else if (anno.type === 'line') {
+    annoLayer.append('line')
+      .attr('class', 'obs-marker-line')
+      .attr('x1', xScale(anno.year)).attr('x2', xScale(anno.year))
+      .attr('y1', 0).attr('y2', innerH);
+    annoLayer.append('text')
+      .attr('class', 'obs-band-label')
+      .attr('x', xScale(anno.year))
+      .attr('y', -22)
+      .attr('text-anchor', 'middle')
+      .text(anno.label);
+  } else if (anno.type === 'label') {
+    annoLayer.append('text')
+      .attr('class', 'obs-band-label')
+      .attr('x', innerW/2).attr('y', -22)
+      .attr('text-anchor', 'middle')
+      .text(anno.label);
+  }
+}
+
+function bindObsCards() {
+document.querySelectorAll('.obs-card').forEach(card => {
+  card.onclick = () => {
+    const obsId = card.dataset.obs;
+    const isActive = card.classList.contains('active');
+    // reset all obs + lineage filter state
+    document.querySelectorAll('.obs-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('active');
+    activeFilter = 'all';
+    clearAnnotations();
+    clearPritzkerPath();
+
+    if (isActive) {
+      activeObs = null;
+      document.querySelectorAll('.node').forEach(el => el.classList.remove('dim','highlight'));
+      document.querySelectorAll('.link').forEach(el => el.classList.remove('dim'));
+      markers.forEach(m => { const el = m.getElement(); if (el) el.classList.remove('dim'); });
+      return;
+    }
+    card.classList.add('active');
+    activeObs = obsId;
+    const obs = OBSERVATIONS[obsId];
+    drawAnnotation(obs.annotation);
+    if (obs.drawPritzkerPath) drawPritzkerPath();
+    if (obs.mapView) {
+      document.querySelectorAll('#map-toggle button').forEach(b => b.classList.remove('active'));
+      document.querySelector(`#map-toggle button[data-mapview="${obs.mapView}"]`)?.classList.add('active');
+      activeMapView = obs.mapView;
+      applyMapView();
+    }
+
+    const matched = new Set(obs.nodeIds);
+    document.querySelectorAll('.node').forEach(el => {
+      if (matched.has(el.dataset.id)) {
+        el.classList.add('highlight');
+        el.classList.remove('dim');
+      } else {
+        el.classList.add('dim');
+        el.classList.remove('highlight');
+      }
+    });
+    document.querySelectorAll('.link').forEach((el, i) => {
+      const e = data.edges[i];
+      const sId = e.source.id || e.source, tId = e.target.id || e.target;
+      el.classList.toggle('dim', !matched.has(sId) || !matched.has(tId));
+    });
+    markers.forEach(m => {
+      const el = m.getElement();
+      if (el) el.classList.toggle('dim', !matched.has(m._archId));
+    });
+  };
+});
+}
+
+// Initial render with current language
+applyLanguage();
+</script>
+</body>
+</html>

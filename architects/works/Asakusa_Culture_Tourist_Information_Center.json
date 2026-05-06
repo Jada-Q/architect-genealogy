@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Asakusa Culture Tourist Information Center",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Asakusa Culture Tourist Information Center</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q24877101",
+  "titles": {
+    "canonical": "Asakusa_Culture_Tourist_Information_Center",
+    "normalized": "Asakusa Culture Tourist Information Center",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Asakusa Culture Tourist Information Center</span></span>"
+  },
+  "pageid": 75647280,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Asakusa_Culture_Tourist_Information_Center_2016.jpg/330px-Asakusa_Culture_Tourist_Information_Center_2016.jpg",
+    "width": 330,
+    "height": 488
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Asakusa_Culture_Tourist_Information_Center_2016.jpg",
+    "width": 1500,
+    "height": 2217
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1343734673",
+  "tid": "c4180ec2-20dc-11f1-ae8c-ed8e8c48439f",
+  "timestamp": "2026-03-16T02:06:38Z",
+  "description": "Tourist information center in Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.71069,
+    "lon": 139.7965
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Asakusa_Culture_Tourist_Information_Center",
+      "revisions": "https://en.wikipedia.org/wiki/Asakusa_Culture_Tourist_Information_Center?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Asakusa_Culture_Tourist_Information_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Asakusa_Culture_Tourist_Information_Center"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Asakusa_Culture_Tourist_Information_Center",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Asakusa_Culture_Tourist_Information_Center",
+      "edit": "https://en.wikipedia.org/wiki/Asakusa_Culture_Tourist_Information_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Asakusa_Culture_Tourist_Information_Center"
+    }
+  },
+  "extract": "The Asakusa Culture Tourist Information Center is a building primarily containing tourist facilities, amongst other amenities in the Asakusa district of Tokyo's Taitō ward. Along with its features, the building is also an attraction due to its architecture, as it was designed by Kengo Kuma, a noted architect. It is located directly across the street from the Kaminarimon and is open from 9:00 am to 8:00 pm. The center's motto is \"Finding, Showing and Supporting\".",
+  "extract_html": "<p>The <b>Asakusa Culture Tourist Information Center</b> is a building primarily containing tourist facilities, amongst other amenities in the Asakusa district of Tokyo's Taitō ward. Along with its features, the building is also an attraction due to its architecture, as it was designed by Kengo Kuma, a noted architect. It is located directly across the street from the Kaminarimon and is open from 9:00<span class=\"nowrap\"> </span>am to 8:00<span class=\"nowrap\"> </span>pm. The center's motto is \"Finding, Showing and Supporting\".</p>"
+}

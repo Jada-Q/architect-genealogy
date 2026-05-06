@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "The National Art Center, Tokyo",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">The National Art Center, Tokyo</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1362638",
+  "titles": {
+    "canonical": "The_National_Art_Center,_Tokyo",
+    "normalized": "The National Art Center, Tokyo",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">The National Art Center, Tokyo</span></span>"
+  },
+  "pageid": 9017354,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_National_Art_Center_%2C_Tokyo_-_panoramio_%281%29.jpg/330px-The_National_Art_Center_%2C_Tokyo_-_panoramio_%281%29.jpg",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/The_National_Art_Center_%2C_Tokyo_-_panoramio_%281%29.jpg/3840px-The_National_Art_Center_%2C_Tokyo_-_panoramio_%281%29.jpg",
+    "width": 4032,
+    "height": 3024
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344637061",
+  "tid": "7c1a3f64-254d-11f1-8c46-31076da91308",
+  "timestamp": "2026-03-21T17:43:35Z",
+  "description": "Art museum in Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.66528,
+    "lon": 139.72634
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/The_National_Art_Center%2C_Tokyo",
+      "revisions": "https://en.wikipedia.org/wiki/The_National_Art_Center%2C_Tokyo?action=history",
+      "edit": "https://en.wikipedia.org/wiki/The_National_Art_Center%2C_Tokyo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:The_National_Art_Center%2C_Tokyo"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/The_National_Art_Center%2C_Tokyo",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/The_National_Art_Center%2C_Tokyo",
+      "edit": "https://en.wikipedia.org/wiki/The_National_Art_Center%2C_Tokyo?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:The_National_Art_Center%2C_Tokyo"
+    }
+  },
+  "extract": "The National Art Center, Tokyo  (NACT) is a museum in Roppongi, Minato, Tokyo, Japan. Opened in January 2007, it is one of the five institutions of the Independent Administrative Institution National Museum of Art. Designed by architect Kisho Kurokawa, it was final completed project before his death in 2007.",
+  "extract_html": "<p><b>The National Art Center, Tokyo</b><span style=\"font-weight:normal\"> </span> (<b>NACT</b>) is a museum in Roppongi, Minato, Tokyo, Japan. Opened in January 2007, it is one of the five institutions of the Independent Administrative Institution National Museum of Art. Designed by architect Kisho Kurokawa, it was final completed project before his death in 2007.</p>"
+}

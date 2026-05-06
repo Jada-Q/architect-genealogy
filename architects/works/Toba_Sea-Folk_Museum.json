@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Toba Sea-Folk Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Toba Sea-Folk Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q11558616",
+  "titles": {
+    "canonical": "Toba_Sea-Folk_Museum",
+    "normalized": "Toba Sea-Folk Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Toba Sea-Folk Museum</span></span>"
+  },
+  "pageid": 67037531,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Toba_Sea-Folk_Museum01.jpg/330px-Toba_Sea-Folk_Museum01.jpg",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Toba_Sea-Folk_Museum01.jpg",
+    "width": 1000,
+    "height": 750
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344890895",
+  "tid": "0787f1c4-2668-11f1-ab08-b709377ae675",
+  "timestamp": "2026-03-23T03:26:07Z",
+  "description": "Fishing museum in Toba, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.449258,
+    "lon": 136.899434
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Toba_Sea-Folk_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Toba_Sea-Folk_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Toba_Sea-Folk_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Toba_Sea-Folk_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Toba_Sea-Folk_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Toba_Sea-Folk_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Toba_Sea-Folk_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Toba_Sea-Folk_Museum"
+    }
+  },
+  "extract": "Toba Sea-Folk Museum  is a museum dedicated to the area's fishing traditions in Toba, Mie Prefecture, Japan. Having first opened as the private Sea-Folk Museum in 1971, the museum reopened in its current location in 1992, and in 2017 was reestablished as a public, municipal museum under its current name. In 1998, the museum buildings, designed by Naitō Hiroshi, were included amongst the 100 Select Instances of Public Architecture  by the then Ministry of Construction. The collection, numbering some 61,840 items as of 31 March 2018, includes some ninety wooden boats from all over Japan, the nation's most comprehensive assemblage of materials relating to the Ama, and a grouping of 6,879 pieces of Ise Bay, Shima Peninsula, and Kumano Sea Fishing Equipment that have been jointly designated an Important Tangible Folk Cultural Property. The displays are organized around seven themes: traditions of sea-folk, sea-folk faith and festivals, sea pollution, Ama divers in Shima, fishing in Ise Bay, fishing in Shima and Kumano, and wooden boats and navigation.",
+  "extract_html": "<p><b>Toba Sea-Folk Museum</b><span style=\"font-weight:normal\"> </span> is a museum dedicated to the area's fishing traditions in Toba, Mie Prefecture, Japan. Having first opened as the private Sea-Folk Museum in 1971, the museum reopened in its current location in 1992, and in 2017 was reestablished as a public, municipal museum under its current name. In 1998, the museum buildings, designed by Naitō Hiroshi, were included amongst the 100 Select Instances of Public Architecture<span style=\"font-weight:normal\"> </span> by the then Ministry of Construction. The collection, numbering some 61,840 items as of 31 March 2018, includes some ninety wooden boats from all over Japan, the nation's most comprehensive assemblage of materials relating to the Ama, and a grouping of 6,879 pieces of <i>Ise Bay, Shima Peninsula, and Kumano Sea Fishing Equipment</i> that have been jointly designated an Important Tangible Folk Cultural Property. The displays are organized around seven themes: traditions of sea-folk, sea-folk faith and festivals, sea pollution, Ama divers in Shima, fishing in Ise Bay, fishing in Shima and Kumano, and wooden boats and navigation.</p>"
+}

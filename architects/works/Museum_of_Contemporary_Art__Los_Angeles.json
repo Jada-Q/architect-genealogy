@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Museum of Contemporary Art, Los Angeles",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Museum of Contemporary Art, Los Angeles</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1134646",
+  "titles": {
+    "canonical": "Museum_of_Contemporary_Art,_Los_Angeles",
+    "normalized": "Museum of Contemporary Art, Los Angeles",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Museum of Contemporary Art, Los Angeles</span></span>"
+  },
+  "pageid": 434342,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Moca-exterior.jpg/330px-Moca-exterior.jpg",
+    "width": 330,
+    "height": 217
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/93/Moca-exterior.jpg",
+    "width": 1200,
+    "height": 790
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1350788284",
+  "tid": "2fc38313-3f7d-11f1-bfd4-12034a27c4ad",
+  "timestamp": "2026-04-24T01:30:33Z",
+  "description": "Art museum in California , U.S.",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.05333333,
+    "lon": -118.25083333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles",
+      "revisions": "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Museum_of_Contemporary_Art%2C_Los_Angeles"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Museum_of_Contemporary_Art%2C_Los_Angeles",
+      "edit": "https://en.wikipedia.org/wiki/Museum_of_Contemporary_Art%2C_Los_Angeles?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Museum_of_Contemporary_Art%2C_Los_Angeles"
+    }
+  },
+  "extract": "The Museum of Contemporary Art, Los Angeles (MOCA) is a contemporary art museum with two locations in Los Angeles, California. The main branch is located on Grand Avenue in Downtown Los Angeles, near the Walt Disney Concert Hall. MOCA's original space, initially intended as a temporary exhibit space while the main facility was built, is now known as the Geffen Contemporary and located in the Little Tokyo district of downtown Los Angeles. Between 2000 and 2019, it operated a satellite facility at the Pacific Design Center facility in West Hollywood.",
+  "extract_html": "<p><b>The Museum of Contemporary Art, Los Angeles</b> (<b>MOCA</b>) is a contemporary art museum with two locations in Los Angeles, California. The main branch is located on Grand Avenue in Downtown Los Angeles, near the Walt Disney Concert Hall. MOCA's original space, initially intended as a temporary exhibit space while the main facility was built, is now known as the Geffen Contemporary and located in the Little Tokyo district of downtown Los Angeles. Between 2000 and 2019, it operated a satellite facility at the Pacific Design Center facility in West Hollywood.</p>"
+}

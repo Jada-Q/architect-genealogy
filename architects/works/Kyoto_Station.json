@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Kyōto Station",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kyōto Station</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q801046",
+  "titles": {
+    "canonical": "Kyōto_Station",
+    "normalized": "Kyōto Station",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Kyōto Station</span></span>"
+  },
+  "pageid": 376377,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Kyoto-STA_Central.jpg/330px-Kyoto-STA_Central.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kyoto-STA_Central.jpg",
+    "width": 2736,
+    "height": 1824
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1329631830",
+  "tid": "07c9591a-e2d6-11f0-9cb5-5ce5307292e5",
+  "timestamp": "2025-12-27T03:42:13Z",
+  "description": "Major railway and metro station in Kyoto, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.98555556,
+    "lon": 135.75861111
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station",
+      "revisions": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ky%C5%8Dto_Station"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Ky%C5%8Dto_Station",
+      "edit": "https://en.wikipedia.org/wiki/Ky%C5%8Dto_Station?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ky%C5%8Dto_Station"
+    }
+  },
+  "extract": "Kyōto Station  is a major railway station and transportation hub in Kyōto, Japan. It has Japan's second-largest station building and is one of the country's largest buildings, incorporating a shopping mall, hotel, movie theater, Isetan department store, and several local government facilities under one 15-story roof.",
+  "extract_html": "<p><b>Kyōto Station</b><span style=\"font-weight:normal\"> </span> is a major railway station and transportation hub in Kyōto, Japan. It has Japan's second-largest station building and is one of the country's largest buildings, incorporating a shopping mall, hotel, movie theater, Isetan department store, and several local government facilities under one 15-story roof.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Omotesando Hills",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Omotesando Hills</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1076070",
+  "titles": {
+    "canonical": "Omotesando_Hills",
+    "normalized": "Omotesando Hills",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Omotesando Hills</span></span>"
+  },
+  "pageid": 4166924,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Omotesando_Hills_2012.JPG/330px-Omotesando_Hills_2012.JPG",
+    "width": 330,
+    "height": 222
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Omotesando_Hills_2012.JPG/3840px-Omotesando_Hills_2012.JPG",
+    "width": 4601,
+    "height": 3100
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1286194504",
+  "tid": "2fd9c8e8-1c39-11f0-8ddb-c24071869481",
+  "timestamp": "2025-04-18T09:40:39Z",
+  "description": "Shopping centre in Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.66725,
+    "lon": 139.70874
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Omotesando_Hills",
+      "revisions": "https://en.wikipedia.org/wiki/Omotesando_Hills?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Omotesando_Hills?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Omotesando_Hills"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Omotesando_Hills",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Omotesando_Hills",
+      "edit": "https://en.wikipedia.org/wiki/Omotesando_Hills?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Omotesando_Hills"
+    }
+  },
+  "extract": "Omotesando Hills  is a shopping complex in central Tokyo built in 2005 in a series of urban developments by Mori Building. It occupies a 250-meter stretch of Omotesandō, a shopping and (previously) residential road in Aoyama. It was designed by Tadao Ando, and contains over 130 shops and 38 apartments.",
+  "extract_html": "<p><b>Omotesando Hills</b><span style=\"font-weight:normal\"> </span> is a shopping complex in central Tokyo built in 2005 in a series of urban developments by Mori Building. It occupies a 250-meter stretch of Omotesandō, a shopping and (previously) residential road in Aoyama. It was designed by Tadao Ando, and contains over 130 shops and 38 apartments.</p>"
+}

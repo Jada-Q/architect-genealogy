@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Nakagin Capsule Tower",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nakagin Capsule Tower</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1633586",
+  "titles": {
+    "canonical": "Nakagin_Capsule_Tower",
+    "normalized": "Nakagin Capsule Tower",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nakagin Capsule Tower</span></span>"
+  },
+  "pageid": 8319693,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nakagin.jpg/330px-Nakagin.jpg",
+    "width": 330,
+    "height": 494
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Nakagin.jpg",
+    "width": 3278,
+    "height": 4912
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345822132",
+  "tid": "b5e0cea3-2a98-11f1-a09f-c599757309bc",
+  "timestamp": "2026-03-28T11:24:40Z",
+  "description": "Former building in Ginza, Tokyo",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.66561111,
+    "lon": 139.76338889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower",
+      "revisions": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nakagin_Capsule_Tower"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Nakagin_Capsule_Tower",
+      "edit": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nakagin_Capsule_Tower"
+    }
+  },
+  "extract": "The Nakagin Capsule Tower Building was a mixed-use residential and office tower in the upscale Ginza district of Tokyo, Japan, designed by architect Kisho Kurokawa. Completed in two years from 1970 to 1972, the building was a rare remaining example of Japanese Metabolism alongside the older Kyoto International Conference Center, an architectural movement emblematic of Japan's postwar cultural resurgence. It was the world's first example of capsule architecture ostensibly built for permanent and practical use.",
+  "extract_html": "<p>The <b>Nakagin Capsule Tower Building</b> was a mixed-use residential and office tower in the upscale Ginza district of Tokyo, Japan, designed by architect Kisho Kurokawa. Completed in two years from 1970 to 1972, the building was a rare remaining example of Japanese Metabolism alongside the older Kyoto International Conference Center, an architectural movement emblematic of Japan's postwar cultural resurgence. It was the world's first example of capsule architecture ostensibly built for permanent and practical use.</p>"
+}

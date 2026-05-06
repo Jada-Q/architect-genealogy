@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Edo-Tokyo Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Edo-Tokyo Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1191042",
+  "titles": {
+    "canonical": "Edo-Tokyo_Museum",
+    "normalized": "Edo-Tokyo Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Edo-Tokyo Museum</span></span>"
+  },
+  "pageid": 8989934,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Edo-Tokyo_Museum.jpg/330px-Edo-Tokyo_Museum.jpg",
+    "width": 330,
+    "height": 264
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/73/Edo-Tokyo_Museum.jpg",
+    "width": 2000,
+    "height": 1600
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1348422356",
+  "tid": "c394789d-3686-11f1-9f5a-27c459ea143d",
+  "timestamp": "2026-04-12T15:46:26Z",
+  "description": "Historical museum in Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.69640278,
+    "lon": 139.79610278
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Edo-Tokyo_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Edo-Tokyo_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Edo-Tokyo_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Edo-Tokyo_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Edo-Tokyo_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Edo-Tokyo_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Edo-Tokyo_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Edo-Tokyo_Museum"
+    }
+  },
+  "extract": "The Edo-Tokyo Museum  is a historical museum located at 1-4-1 Yokoami, Sumida-Ku, Tokyo in the Ryogoku district. The museum opened in March 1993 to preserve Edo's cultural heritage, and features city models of Edo and Tokyo between 1590 and 1964. It was the first museum built dedicated to the history of Tokyo. Some main features of the permanent exhibitions are the life-size replica of the Nihonbashi, which was the bridge leading into Edo; scale models of towns and buildings across the Edo, Meiji, and Shōwa periods; and the Nakamura-za theatre.",
+  "extract_html": "<p>The <b>Edo-Tokyo Museum</b><span style=\"font-weight:normal\"> </span> is a historical museum located at 1-4-1 Yokoami, Sumida-Ku, Tokyo in the Ryogoku district. The museum opened in March 1993 to preserve Edo's cultural heritage, and features city models of Edo and Tokyo between 1590 and 1964. It was the first museum built dedicated to the history of Tokyo. Some main features of the permanent exhibitions are the life-size replica of the Nihonbashi, which was the bridge leading into Edo; scale models of towns and buildings across the Edo, Meiji, and Shōwa periods; and the Nakamura-za theatre.</p>"
+}

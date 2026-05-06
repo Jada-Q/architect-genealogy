@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Tama Art University Library",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Tama Art University Library</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q28154423",
+  "titles": {
+    "canonical": "Tama_Art_University_Library",
+    "normalized": "Tama Art University Library",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Tama Art University Library</span></span>"
+  },
+  "pageid": 52291857,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Tama_bijutsu_daigaku_library.jpg/330px-Tama_bijutsu_daigaku_library.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/96/Tama_bijutsu_daigaku_library.jpg",
+    "width": 900,
+    "height": 600
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345506005",
+  "tid": "72f2ed7c-290e-11f1-85eb-77e1cb923947",
+  "timestamp": "2026-03-26T12:22:26Z",
+  "description": "University Library in Tokyo, Japan",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Tama_Art_University_Library",
+      "revisions": "https://en.wikipedia.org/wiki/Tama_Art_University_Library?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Tama_Art_University_Library?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Tama_Art_University_Library"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Tama_Art_University_Library",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Tama_Art_University_Library",
+      "edit": "https://en.wikipedia.org/wiki/Tama_Art_University_Library?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Tama_Art_University_Library"
+    }
+  },
+  "extract": "Tama Art University Library is the academic library associated with Tama Art University consisting of two library locations in Tokyo, Japan: one on the Hachioji campus and the other on the Kaminoge campus. Together, the libraries serve university students and faculty. The primary focus is on art education and research. Its collection also includes database materials on design, architecture, film, photography, and other related topics of study.",
+  "extract_html": "<p><b>Tama Art University Library</b> is the academic library associated with Tama Art University consisting of two library locations in Tokyo, Japan: one on the Hachioji campus and the other on the Kaminoge campus. Together, the libraries serve university students and faculty. The primary focus is on art education and research. Its collection also includes database materials on design, architecture, film, photography, and other related topics of study.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Rolex Learning Center",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rolex Learning Center</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3030047",
+  "titles": {
+    "canonical": "Rolex_Learning_Center",
+    "normalized": "Rolex Learning Center",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Rolex Learning Center</span></span>"
+  },
+  "pageid": 26293941,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Rolex_Learning_center.jpg/330px-Rolex_Learning_center.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Rolex_Learning_center.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344624836",
+  "tid": "65bab74d-2542-11f1-bb17-3f0d665c90c7",
+  "timestamp": "2026-03-21T16:24:13Z",
+  "description": "Campus building in Switzerland",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 46.51833333,
+    "lon": 6.56805556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Rolex_Learning_Center",
+      "revisions": "https://en.wikipedia.org/wiki/Rolex_Learning_Center?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Rolex_Learning_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rolex_Learning_Center"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Rolex_Learning_Center",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Rolex_Learning_Center",
+      "edit": "https://en.wikipedia.org/wiki/Rolex_Learning_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Rolex_Learning_Center"
+    }
+  },
+  "extract": "The Rolex Learning Center is a public library and the main research library of EPFL, the Swiss Federal Institute of Technology in Lausanne. Designed by the winners of 2010 Pritzker Prize, Japanese-duo SANAA, it was inaugurated on 22 February 2010.",
+  "extract_html": "<p>The <b>Rolex Learning Center</b> is a public library and the main research library of EPFL, the Swiss Federal Institute of Technology in Lausanne. Designed by the winners of 2010 Pritzker Prize, Japanese-duo SANAA, it was inaugurated on 22 February 2010.</p>"
+}

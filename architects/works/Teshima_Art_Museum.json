@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Teshima Art Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Teshima Art Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2379884",
+  "titles": {
+    "canonical": "Teshima_Art_Museum",
+    "normalized": "Teshima Art Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Teshima Art Museum</span></span>"
+  },
+  "pageid": 39287048,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Teshima_Art_Museum_exterior_view_201310.jpg/330px-Teshima_Art_Museum_exterior_view_201310.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Teshima_Art_Museum_exterior_view_201310.jpg/3840px-Teshima_Art_Museum_exterior_view_201310.jpg",
+    "width": 6000,
+    "height": 4000
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1350964950",
+  "tid": "fbba912a-4052-11f1-89cd-23b29b6dc4c7",
+  "timestamp": "2026-04-25T03:00:58Z",
+  "description": "Art museum in Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.48972222,
+    "lon": 134.09138889
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Teshima_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Teshima_Art_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Teshima_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Teshima_Art_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Teshima_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Teshima_Art_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Teshima_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Teshima_Art_Museum"
+    }
+  },
+  "extract": "The Teshima Art Museum  hosts a single piece of artwork and is located on the island of Teshima, Kagawa Prefecture, Japan, in the Seto Inland Sea. It is operated by the Benesse Foundation. The architect is Ryue Nishizawa. The museum building is made of a freestanding concrete shell which is 25 cm-thick, 40 by 60 meters, and 4 meters at its highest point.",
+  "extract_html": "<p>The <b>Teshima Art Museum</b><span style=\"font-weight:normal\"> </span> hosts a single piece of artwork and is located on the island of Teshima, Kagawa Prefecture, Japan, in the Seto Inland Sea. It is operated by the Benesse Foundation. The architect is Ryue Nishizawa. The museum building is made of a freestanding concrete shell which is 25 cm-thick, 40 by 60 meters, and 4 meters at its highest point.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "4 World Trade Center",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">4 World Trade Center</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1351208",
+  "titles": {
+    "canonical": "4_World_Trade_Center",
+    "normalized": "4 World Trade Center",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">4 World Trade Center</span></span>"
+  },
+  "pageid": 12798908,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/NYC_-_Four_World_Trade_Center_-_panoramio_%281%29.jpg/330px-NYC_-_Four_World_Trade_Center_-_panoramio_%281%29.jpg",
+    "width": 330,
+    "height": 440
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/45/NYC_-_Four_World_Trade_Center_-_panoramio_%281%29.jpg",
+    "width": 3000,
+    "height": 4000
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344132567",
+  "tid": "19b90a21-22d9-11f1-8a1d-15d69e56ffe4",
+  "timestamp": "2026-03-18T14:45:26Z",
+  "description": "Office skyscraper in Manhattan, New York",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 40.7104,
+    "lon": -74.0119
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/4_World_Trade_Center",
+      "revisions": "https://en.wikipedia.org/wiki/4_World_Trade_Center?action=history",
+      "edit": "https://en.wikipedia.org/wiki/4_World_Trade_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:4_World_Trade_Center"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/4_World_Trade_Center",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/4_World_Trade_Center",
+      "edit": "https://en.wikipedia.org/wiki/4_World_Trade_Center?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:4_World_Trade_Center"
+    }
+  },
+  "extract": "4 World Trade Center is a skyscraper constructed as part of the new World Trade Center in Lower Manhattan, New York City. The tower is located on Greenwich Street at the southeastern corner of the World Trade Center site. Fumihiko Maki designed the 978 ft-tall (298 m) building. It houses the headquarters of the Port Authority of New York and New Jersey (PANYNJ).",
+  "extract_html": "<p><b>4 World Trade Center</b> is a skyscraper constructed as part of the new World Trade Center in Lower Manhattan, New York City. The tower is located on Greenwich Street at the southeastern corner of the World Trade Center site. Fumihiko Maki designed the 978 ft-tall (298 m) building. It houses the headquarters of the Port Authority of New York and New Jersey (PANYNJ).</p>"
+}

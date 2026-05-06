@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Nagoya City Art Museum",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nagoya City Art Museum</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q469573",
+  "titles": {
+    "canonical": "Nagoya_City_Art_Museum",
+    "normalized": "Nagoya City Art Museum",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nagoya City Art Museum</span></span>"
+  },
+  "pageid": 31254501,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Nagoya_City_Art_Museum%2C_Sakae_Naka_Ward_Nagoya_2022.jpg/330px-Nagoya_City_Art_Museum%2C_Sakae_Naka_Ward_Nagoya_2022.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/30/Nagoya_City_Art_Museum%2C_Sakae_Naka_Ward_Nagoya_2022.jpg",
+    "width": 1500,
+    "height": 1000
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1348825554",
+  "tid": "1ac05675-3805-11f1-8b4d-c74a561c3ddb",
+  "timestamp": "2026-04-14T13:23:20Z",
+  "description": "Museum in Nagoya, Aichi, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.16388889,
+    "lon": 136.90111111
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Nagoya_City_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Nagoya_City_Art_Museum?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Nagoya_City_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nagoya_City_Art_Museum"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Nagoya_City_Art_Museum",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Nagoya_City_Art_Museum",
+      "edit": "https://en.wikipedia.org/wiki/Nagoya_City_Art_Museum?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nagoya_City_Art_Museum"
+    }
+  },
+  "extract": "The Nagoya City Art Museum is an art museum in Naka-ku, Nagoya, Nagoya, Japan, located in Shirakawa Park. It opened on 22 April 1988. Designed by Kisho Kurokawa, the museum was planned in the early 1980s, while collection building began in 1983.",
+  "extract_html": "<p>The <b>Nagoya City Art Museum</b> is an art museum in Naka-ku, Nagoya, Nagoya, Japan, located in Shirakawa Park. It opened on 22 April 1988. Designed by Kisho Kurokawa, the museum was planned in the early 1980s, while collection building began in 1983.</p>"
+}

@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Tokyo Metropolitan Government Building",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Tokyo Metropolitan Government Building</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q111973",
+  "titles": {
+    "canonical": "Tokyo_Metropolitan_Government_Building",
+    "normalized": "Tokyo Metropolitan Government Building",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Tokyo Metropolitan Government Building</span></span>"
+  },
+  "pageid": 870601,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Tokyo_Metropolitan_Government_Building_2024.jpg/330px-Tokyo_Metropolitan_Government_Building_2024.jpg",
+    "width": 330,
+    "height": 286
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/96/Tokyo_Metropolitan_Government_Building_2024.jpg",
+    "width": 2500,
+    "height": 2169
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345442265",
+  "tid": "dfdf97fe-28c0-11f1-b0ca-114a4fe75475",
+  "timestamp": "2026-03-26T03:07:08Z",
+  "description": "Building in Nishi-Shinjuku, Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.68972222,
+    "lon": 139.69222222
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Government_Building",
+      "revisions": "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Government_Building?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Government_Building?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Tokyo_Metropolitan_Government_Building"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Government_Building",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Tokyo_Metropolitan_Government_Building",
+      "edit": "https://en.wikipedia.org/wiki/Tokyo_Metropolitan_Government_Building?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Tokyo_Metropolitan_Government_Building"
+    }
+  },
+  "extract": "The Tokyo Metropolitan Government Building , also referred to as the Tochō (都庁) for short, is the seat of the Tokyo Metropolitan Government, which governs the special wards, cities, towns, and villages that constitute the Tokyo Metropolis.",
+  "extract_html": "<p>The <b>Tokyo Metropolitan Government Building</b><span style=\"font-weight:normal\"> </span>, also referred to as the <b>Tochō</b><span style=\"font-weight:normal\"> (都庁)</span> for short, is the seat of the Tokyo Metropolitan Government, which governs the special wards, cities, towns, and villages that constitute the Tokyo Metropolis.</p>"
+}

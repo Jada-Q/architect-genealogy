@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Yoyogi National Stadium",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Yoyogi National Stadium</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1069457",
+  "titles": {
+    "canonical": "Yoyogi_National_Stadium",
+    "normalized": "Yoyogi National Stadium",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Yoyogi National Stadium</span></span>"
+  },
+  "pageid": 2485763,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Kokuritsu_Yoyogi_Ky%C5%8Dgij%C5%8D_1.jpg/330px-Kokuritsu_Yoyogi_Ky%C5%8Dgij%C5%8D_1.jpg",
+    "width": 330,
+    "height": 220
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Kokuritsu_Yoyogi_Ky%C5%8Dgij%C5%8D_1.jpg/3840px-Kokuritsu_Yoyogi_Ky%C5%8Dgij%C5%8D_1.jpg",
+    "width": 4412,
+    "height": 2941
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1347631077",
+  "tid": "12769114-32c2-11f1-aea5-c1d258693ae1",
+  "timestamp": "2026-04-07T20:40:54Z",
+  "description": "Arena located at Yoyogi Park in Shibuya, Tokyo, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 35.6675,
+    "lon": 139.7003
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Yoyogi_National_Stadium",
+      "revisions": "https://en.wikipedia.org/wiki/Yoyogi_National_Stadium?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Yoyogi_National_Stadium?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Yoyogi_National_Stadium"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Yoyogi_National_Stadium",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Yoyogi_National_Stadium",
+      "edit": "https://en.wikipedia.org/wiki/Yoyogi_National_Stadium?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Yoyogi_National_Stadium"
+    }
+  },
+  "extract": "Yoyogi National Stadium , also known as Yoyogi National Gymnasium is a sports facility at Yoyogi Park in Shibuya, Tokyo, Japan.",
+  "extract_html": "<p><b>Yoyogi National Stadium</b><span style=\"font-weight:normal\"> </span>, also known as <b>Yoyogi National Gymnasium</b> is a sports facility at Yoyogi Park in Shibuya, Tokyo, Japan.</p>"
+}

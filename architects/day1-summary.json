@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kuma",
+    "name": "隈研吾 KKAA",
+    "url": "https://kkaa.co.jp/",
+    "title": "隈研吾建築都市設計事務所 – 東京、パリ、上海 & 北京",
+    "htmlSize": 46299,
+    "pngSize": 1591685,
+    "status": "OK",
+    "ms": 1137
+  },
+  {
+    "id": "ito",
+    "name": "伊東豊雄",
+    "url": "http://www.toyo-ito.co.jp/",
+    "title": "Toyo Ito & Associates, Architects",
+    "htmlSize": 1704,
+    "pngSize": 14095,
+    "status": "OK",
+    "ms": 583
+  },
+  {
+    "id": "sanaa",
+    "name": "SANAA",
+    "url": "http://www.sanaa.co.jp/",
+    "title": "Kazuyo Sejima + Ryue Nishizawa /",
+    "htmlSize": 20208,
+    "pngSize": 24275,
+    "status": "OK",
+    "ms": 600
+  },
+  {
+    "id": "fujimoto",
+    "name": "藤本壮介",
+    "url": "https://sou-fujimoto.net/",
+    "title": "sou fujimoto architects / 藤本壮介建築設計事務所",
+    "htmlSize": 6302,
+    "pngSize": 347833,
+    "status": "OK",
+    "ms": 2519
+  },
+  {
+    "id": "ban",
+    "name": "坂茂",
+    "url": "https://shigerubanarchitects.com/",
+    "title": "Shigeru Ban - Architects",
+    "htmlSize": 340686,
+    "pngSize": 2358720,
+    "status": "OK",
+    "ms": 3693
+  },
+  {
+    "id": "ishigami",
+    "name": "石上純也",
+    "url": "https://jnyi.jp/",
+    "title": "junya.ishigami+associates",
+    "htmlSize": 3266,
+    "pngSize": 22902,
+    "status": "OK",
+    "ms": 805
+  },
+  {
+    "id": "hirata",
+    "name": "平田晃久",
+    "url": "https://www.hao.nu/",
+    "title": "平田晃久建築設計事務所 | Akihisa Hirata Architecture Office",
+    "htmlSize": 4215,
+    "pngSize": 85825,
+    "status": "OK",
+    "ms": 1339
+  },
+  {
+    "id": "yamamoto",
+    "name": "山本理顕",
+    "url": "https://www.riken-yamamoto.co.jp/",
+    "title": "Riken Yamamoto Official web",
+    "htmlSize": 5209,
+    "pngSize": 666424,
+    "status": "OK",
+    "ms": 860
+  },
+  {
+    "id": "bowwow",
+    "name": "Atelier Bow-Wow",
+    "url": "https://www.bow-wow.jp/",
+    "title": "Atelier Bow-Wow",
+    "htmlSize": 5093,
+    "pngSize": 61839,
+    "status": "OK",
+    "ms": 996
+  }
+]

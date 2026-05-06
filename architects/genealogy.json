@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "source": "English Wikipedia REST API",
+    "extracted": "2026-05-06",
+    "scope": "10 selected Japanese architects + key external mentors",
+    "limitations": [
+      "Wikipedia EN coverage uneven (e.g., 平田晃久 page is wrong person — rower with same name)",
+      "Some mentor relationships from Japanese architectural education tradition not in EN Wikipedia",
+      "Foreign influences (Frank Lloyd Wright etc) excluded for clarity"
+    ]
+  },
+  "nodes": [
+    { "id": "ando",      "label": "安藤忠雄",  "labelEn": "Tadao Ando",       "born": 1941, "founded": 1968, "school": "self-taught", "pritzker": 1995 },
+    { "id": "ito",       "label": "伊東豊雄",  "labelEn": "Toyo Ito",         "born": 1941, "founded": 1979, "school": "U Tokyo",     "pritzker": 2013 },
+    { "id": "kuma",      "label": "隈研吾",    "labelEn": "Kengo Kuma",       "born": 1954, "founded": 1990, "school": "U Tokyo" },
+    { "id": "yamamoto",  "label": "山本理顕",  "labelEn": "Riken Yamamoto",   "born": 1945, "founded": 1973, "school": "Nihon U / Geidai / U Tokyo", "pritzker": 2024 },
+    { "id": "ban",       "label": "坂茂",      "labelEn": "Shigeru Ban",      "born": 1957, "founded": 1985, "school": "SCI-Arc / Cooper Union",     "pritzker": 2014 },
+    { "id": "sejima",    "label": "妹島和世",  "labelEn": "Kazuyo Sejima",    "born": 1956, "founded": 1987, "school": "Japan Women's U",            "pritzker": 2010 },
+    { "id": "nishizawa", "label": "西沢立衛",  "labelEn": "Ryue Nishizawa",   "born": 1966, "founded": 1997, "school": "Yokohama National U",        "pritzker": 2010 },
+    { "id": "fujimoto",  "label": "藤本壮介",  "labelEn": "Sou Fujimoto",     "born": 1971, "founded": 2000, "school": "U Tokyo" },
+    { "id": "ishigami",  "label": "石上純也",  "labelEn": "Junya Ishigami",   "born": 1974, "founded": 2004, "school": "Geidai" },
+    { "id": "hirata",    "label": "平田晃久",  "labelEn": "Akihisa Hirata",   "born": 1971, "founded": 2005, "school": "Kyoto U" },
+    { "id": "bowwow",    "label": "Atelier Bow-Wow", "labelEn": "Atelier Bow-Wow", "born": null, "founded": 1992, "school": "Tokyo Tech" },
+
+    { "id": "kikutake",  "label": "菊竹清訓",  "labelEn": "Kiyonori Kikutake", "external": true, "note": "Metabolism founder, Ito's mentor" },
+    { "id": "hara",      "label": "原広司",    "labelEn": "Hiroshi Hara",      "external": true, "note": "U Tokyo professor, Yamamoto's mentor" },
+    { "id": "hejduk",    "label": "John Hejduk", "labelEn": "John Hejduk",     "external": true, "note": "Cooper Union, Ban's mentor (NY Five)" }
+  ],
+  "edges": [
+    { "source": "kikutake", "target": "ito",       "type": "worked_at",     "years": "1965-1969", "note": "at Kiyonori Kikutake Architect" },
+    { "source": "ito",       "target": "sejima",   "type": "worked_at",     "years": "1981-1987", "note": "at Toyo Ito & Associates" },
+    { "source": "ito",       "target": "nishizawa","type": "worked_at",     "years": "~1990s",    "note": "at Toyo Ito (per Wikipedia, alongside Sejima)" },
+    { "source": "ito",       "target": "hirata",   "type": "worked_at",     "years": "?",          "note": "Hirata listed in Ito's training-ground alumni" },
+    { "source": "sejima",    "target": "nishizawa","type": "worked_at",     "years": "1987-1995", "note": "at Kazuyo Sejima & Assoc; co-founded SANAA 1995" },
+    { "source": "sejima",    "target": "ishigami", "type": "worked_at",     "years": "2000-2004", "note": "at SANAA" },
+    { "source": "hara",      "target": "yamamoto", "type": "studied_under", "years": "post-1971", "note": "U Tokyo doctoral studies" },
+    { "source": "hejduk",    "target": "ban",      "type": "studied_under", "years": "early 80s", "note": "Cooper Union, graduated 1984" }
+  ]
+}

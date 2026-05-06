@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Church of the Light",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Church of the Light</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q1655766",
+  "titles": {
+    "canonical": "Church_of_the_Light",
+    "normalized": "Church of the Light",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Church of the Light</span></span>"
+  },
+  "pageid": 7019267,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ibaraki_Kasugaoka_Church_light_cross.jpg/330px-Ibaraki_Kasugaoka_Church_light_cross.jpg",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Ibaraki_Kasugaoka_Church_light_cross.jpg",
+    "width": 1070,
+    "height": 803
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1349725248",
+  "tid": "a3fac2ba-3b48-11f1-96b3-2d94cc7782d4",
+  "timestamp": "2026-04-18T17:04:20Z",
+  "description": "Christian church in Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 34.81861111,
+    "lon": 135.53694444
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Church_of_the_Light",
+      "revisions": "https://en.wikipedia.org/wiki/Church_of_the_Light?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Church_of_the_Light?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Church_of_the_Light"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Church_of_the_Light",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Church_of_the_Light",
+      "edit": "https://en.wikipedia.org/wiki/Church_of_the_Light?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Church_of_the_Light"
+    }
+  },
+  "extract": "The Church of the Light is the main chapel of the Ibaraki Kasugaoka Church, a member church of the United Church of Christ in Japan. It was built in 1989, in the city of Ibaraki, Osaka Prefecture.\nThis building is one of the most famous designs of Japanese architect Tadao Ando.",
+  "extract_html": "<p>The <b>Church of the Light</b> is the main chapel of the Ibaraki Kasugaoka Church, a member church of the United Church of Christ in Japan. It was built in 1989, in the city of Ibaraki, Osaka Prefecture.\nThis building is one of the most famous designs of Japanese architect Tadao Ando.</p>"
+}

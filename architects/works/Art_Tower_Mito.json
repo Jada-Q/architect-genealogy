@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Art Tower Mito",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Art Tower Mito</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q705767",
+  "titles": {
+    "canonical": "Art_Tower_Mito",
+    "normalized": "Art Tower Mito",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Art Tower Mito</span></span>"
+  },
+  "pageid": 34996816,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mito_Art_Tower.JPG/330px-Mito_Art_Tower.JPG",
+    "width": 330,
+    "height": 511
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Mito_Art_Tower.JPG",
+    "width": 2448,
+    "height": 3791
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1350965081",
+  "tid": "24db23fc-4053-11f1-a1f1-759a13da25de",
+  "timestamp": "2026-04-25T03:02:07Z",
+  "description": "Art gallery",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 36.38027778,
+    "lon": 140.46583333
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Art_Tower_Mito",
+      "revisions": "https://en.wikipedia.org/wiki/Art_Tower_Mito?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Art_Tower_Mito?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Art_Tower_Mito"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Art_Tower_Mito",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Art_Tower_Mito",
+      "edit": "https://en.wikipedia.org/wiki/Art_Tower_Mito?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Art_Tower_Mito"
+    }
+  },
+  "extract": "Art Tower Mito  is an arts complex in Mito, Ibaraki, Japan. It opened in 1990 as part of the centennial celebrations of the municipality of Mito. There is a concert hall that seats 680, a theater for up to 636, a contemporary art gallery, and a landmark tower, which rises 100 meters. Arata Isozaki was the architect, with acoustical design by Nagata Acoustics. The design is based on the Boerdijk–Coxeter helix.",
+  "extract_html": "<p><b>Art Tower Mito</b><span style=\"font-weight:normal\"> </span> is an arts complex in Mito, Ibaraki, Japan. It opened in 1990 as part of the centennial celebrations of the municipality of Mito. There is a concert hall that seats 680, a theater for up to 636, a contemporary art gallery, and a landmark tower, which rises 100 meters. Arata Isozaki was the architect, with acoustical design by Nagata Acoustics. The design is based on the Boerdijk–Coxeter helix.</p>"
+}

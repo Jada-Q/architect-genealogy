@@ -1,0 +1,53 @@
+{
+  "type": "standard",
+  "title": "Sendai Mediatheque",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Sendai Mediatheque</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q988508",
+  "titles": {
+    "canonical": "Sendai_Mediatheque",
+    "normalized": "Sendai Mediatheque",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Sendai Mediatheque</span></span>"
+  },
+  "pageid": 31068006,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sendai_Mediatheque_2009.jpg/330px-Sendai_Mediatheque_2009.jpg",
+    "width": 330,
+    "height": 493
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/14/Sendai_Mediatheque_2009.jpg",
+    "width": 857,
+    "height": 1280
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1345069603",
+  "tid": "b5140a35-2733-11f1-8d17-217126ebd5b1",
+  "timestamp": "2026-03-24T03:44:06Z",
+  "description": "Library in Sendai, Japan",
+  "description_source": "local",
+  "coordinates": {
+    "lat": 38.26555556,
+    "lon": 140.86555556
+  },
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Sendai_Mediatheque",
+      "revisions": "https://en.wikipedia.org/wiki/Sendai_Mediatheque?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Sendai_Mediatheque?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Sendai_Mediatheque"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Sendai_Mediatheque",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Sendai_Mediatheque",
+      "edit": "https://en.wikipedia.org/wiki/Sendai_Mediatheque?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Sendai_Mediatheque"
+    }
+  },
+  "extract": "Sendai Mediatheque is a library in Sendai, Miyagi Prefecture, Japan. It was designed by Toyo Ito in 1995 and completed in 2001.",
+  "extract_html": "<p><b>Sendai Mediatheque</b> is a library in Sendai, Miyagi Prefecture, Japan. It was designed by Toyo Ito in 1995 and completed in 2001.</p>"
+}

@@ -5,6 +5,7 @@ An interactive genealogy of 38 Japanese architects, mapping master-disciple conn
 **Live**:
 - [📖 Scrolling essay](https://architect-genealogy.vercel.app/story) (3-min read · EN / 中文 / 日本語)
 - [🔧 Interactive network](https://architect-genealogy.vercel.app) (full data tool)
+- 🪞 Mirror: [jada-q.github.io/architect-genealogy](https://jada-q.github.io/architect-genealogy/) (GitHub Pages)
 
 ![Story hero](docs/screenshots/story-hero.png)
 

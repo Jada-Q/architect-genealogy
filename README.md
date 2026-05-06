@@ -6,6 +6,22 @@ An interactive genealogy of 38 Japanese architects, mapping master-disciple conn
 - [📖 Scrolling essay](https://architect-genealogy.vercel.app/story) (3-min read · EN / 中文 / 日本語)
 - [🔧 Interactive network](https://architect-genealogy.vercel.app) (full data tool)
 
+![Story hero](docs/screenshots/story-hero.png)
+
+![Network tool](docs/screenshots/network-tool.png)
+
+<details>
+<summary>More screenshots</summary>
+
+**Story scene — Tange's Empire:**
+![Tange scene](docs/screenshots/story-tange.png)
+
+**Mobile:**
+
+<img src="docs/screenshots/story-mobile.png" width="375" alt="Mobile story">
+
+</details>
+
 ---
 
 ## What this is
